@@ -116,6 +116,9 @@
             this.ClientSize = new System.Drawing.Size(343, 349);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ExpenseMaster";
             this.Text = "Income/Expense Type";
             this.Load += new System.EventHandler(this.ExpenseMaster_Load);
