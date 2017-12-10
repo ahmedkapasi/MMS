@@ -31,6 +31,7 @@ namespace Madrasah_Management_System
         {
             objForm = new StudentSearch();
             objForm.Show();
+
         }
 
         private void FeeCollection_Load(object sender, EventArgs e)
