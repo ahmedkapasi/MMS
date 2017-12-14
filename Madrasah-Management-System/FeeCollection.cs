@@ -16,6 +16,19 @@ namespace Madrasah_Management_System
         {
             InitializeComponent();
         }
+        public FeeCollection(string studentID)
+        {
+            InitializeComponent();
+            try
+            {
+                txt_stu_name.Text = studentID;       
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
         Form objForm;
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -30,8 +43,9 @@ namespace Madrasah_Management_System
         private void button2_Click(object sender, EventArgs e)
         {
             objForm = new StudentSearch();
+            objForm.MdiParent = this.MdiParent;
             objForm.Show();
-
+            this.Close();
         }
 
         private void FeeCollection_Load(object sender, EventArgs e)
