@@ -123,8 +123,8 @@ namespace Madrasah_Management_System
             string mhr_no = studentRow["mhr_no"].ToString();
             string name = studentRow["name"].ToString();
             string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
-            string fees_details = string.Format("Received an amount of {0} on {1} from {2}", txt_fees.Text,
-                DateTime.Now.ToString("dd-MMM-yyyy"), studentRow["name"]);
+            string fees_details = string.Format("Received an amount of {0} on {1}", txt_fees.Text,
+                DateTime.Now.ToString("dd-MMM-yyyy"));
             rptParams.Add("Period",period);
             rptParams.Add("MHR_No", mhr_no);
             rptParams.Add("Name", name);
