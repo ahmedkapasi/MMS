@@ -30,12 +30,12 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_its_no = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_mhr_no = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -52,12 +52,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txt_its_no);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txt_mhr_no);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txt_name);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(25, 26);
             this.groupBox2.Name = "groupBox2";
@@ -66,12 +66,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Student Details";
             // 
-            // textBox2
+            // txt_its_no
             // 
-            this.textBox2.Location = new System.Drawing.Point(486, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(81, 20);
-            this.textBox2.TabIndex = 11;
+            this.txt_its_no.Location = new System.Drawing.Point(486, 31);
+            this.txt_its_no.Name = "txt_its_no";
+            this.txt_its_no.Size = new System.Drawing.Size(81, 20);
+            this.txt_its_no.TabIndex = 11;
             // 
             // button1
             // 
@@ -92,12 +92,12 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "ITS No.";
             // 
-            // textBox3
+            // txt_mhr_no
             // 
-            this.textBox3.Location = new System.Drawing.Point(330, 30);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(90, 20);
-            this.textBox3.TabIndex = 6;
+            this.txt_mhr_no.Location = new System.Drawing.Point(330, 30);
+            this.txt_mhr_no.Name = "txt_mhr_no";
+            this.txt_mhr_no.Size = new System.Drawing.Size(90, 20);
+            this.txt_mhr_no.TabIndex = 6;
             // 
             // label4
             // 
@@ -108,12 +108,12 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "MHR No.";
             // 
-            // textBox1
+            // txt_name
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 4;
+            this.txt_name.Location = new System.Drawing.Point(107, 30);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(137, 20);
+            this.txt_name.TabIndex = 4;
             // 
             // label1
             // 
@@ -148,10 +148,10 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_its_no;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_mhr_no;
+        private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

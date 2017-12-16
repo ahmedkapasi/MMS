@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Windows.Forms;
 namespace Madrasah_Management_System
 {
     public class common
@@ -24,6 +25,19 @@ namespace Madrasah_Management_System
                 System.Windows.Forms.MessageBox.Show(ex.Message);   
             }
             return ds;
+        }
+        public static void showForm(Form form)
+        {
+            foreach (Form f in MainForm.ActiveForm.MdiChildren)
+            {
+                if (form.GetType() == f.GetType())
+                {
+                    f.Show();
+                    return;
+                }
+            }
+            form.MdiParent = MainForm.ActiveForm;
+            form.Show();
         }
     }
 }
