@@ -33,6 +33,7 @@ namespace Madrasah_Management_System
                 txt_its_id.Text = studentRow["its_id"].ToString();
                 _studentID = studentRow["id"].ToString();
                 _feesAmount = studentRow["fees"].ToString();
+                cmb_pay_method.SelectedIndex = 0;
                 var incType = common.getDataSet("SELECT * FROM INC_EXP_HEADS WHERE TYPE='Income'");
                 cmb_inc_type.DataSource = incType.Tables[0];
                 string dfltType = incType.Tables[0].Select("sub_type=1")[0]["ID"].ToString();
@@ -119,17 +120,19 @@ namespace Madrasah_Management_System
         {
             Dictionary<string, object> frmParams = new Dictionary<string, object>();
             Dictionary<string, string> rptParams = new Dictionary<string, string>();
-            string period = dp_for_month.Value.ToString("MMMM-yyyy");
+            string period = "For Month " + dp_for_month.Value.ToString("MMMM-yyyy");
             string mhr_no = studentRow["mhr_no"].ToString();
             string name = studentRow["name"].ToString();
+            string standard = studentRow["standard"].ToString();
             string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
-            string fees_details = string.Format("Received an amount of {0} on {1}", txt_fees.Text,
-                DateTime.Now.ToString("dd-MMM-yyyy"));
+            string fees_details = string.Format("Received an amount of {0} on {1} by {2}", txt_fees.Text,
+                DateTime.Now.ToString("dd-MMM-yyyy"),cmb_pay_method.Text);
             rptParams.Add("Period",period);
             rptParams.Add("MHR_No", mhr_no);
             rptParams.Add("Name", name);
             rptParams.Add("Fees_details", fees_details);
             rptParams.Add("Report_Heading", rptHeading);
+            rptParams.Add("Standard", standard);
             frmParams.Add("reportParams", rptParams);
             frmParams.Add("reportName", "fee_receipt.rdlc");
             Form objForm = new Report_Viewer(frmParams);
