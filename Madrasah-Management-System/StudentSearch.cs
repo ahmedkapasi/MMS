@@ -14,6 +14,8 @@ namespace Madrasah_Management_System
     public partial class StudentSearch : Form
     {
         DataSet student_ds = new DataSet("students");
+        private int _selectedRowIndx;
+
         public StudentSearch()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace Madrasah_Management_System
         {
             try
             {
-                
+
                 string cmd = @"SELECT STU.ID,ST.FEES,STU.NAME,STU.MHR_NO,STU.ITS_ID,ST.name 'STANDARD'
                 FROM STUDENTS STU,STANDARDS ST WHERE STU.STANDARD = ST.ID";
                 student_ds = common.getDataSet(cmd);
@@ -31,30 +33,50 @@ namespace Madrasah_Management_System
                 dataGridView1.Columns["ID"].Visible = false;
                 dataGridView1.Columns["FEES"].Visible = false;
                 dataGridView1.Columns["NAME"].Width = 300;
-                dataGridView1.RowHeaderMouseDoubleClick += dataGridView1_RowHeaderMouseDoubleClick;
-                dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
+                dataGridView1.MouseDown += dataGridView1_MouseDown;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        void dataGridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                int rowIndx = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+                if (rowIndx == -1) { return; }
+                _selectedRowIndx = rowIndx;
+                
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[rowIndx].Selected = true;
+                contextMenuStrip1.Show(dataGridView1, e.X, e.Y);
+            }
+        }
+
+        void showStudentForm(int formType)
+        {
+            DataRow dr;
+            if (dataGridView1.DataSource.GetType() == typeof(DataView))
+            {
+                dr = (dataGridView1.DataSource as DataView).ToTable().Rows[_selectedRowIndx];
+            }
+            else
+            {
+                dr = (dataGridView1.DataSource as DataTable).Rows[_selectedRowIndx];
+            }
+            Form fc;
+            if (formType == 1)
+            {
+                fc = new Student_Registration(dr);
+            }
+            else {
+                fc = new FeeCollection(dr);
+            }
             
-        }
-
-        void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            showFeeForm(e.RowIndex);
-        }
-
-        void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-            showFeeForm(e.RowIndex);
-        }
-
-        void showFeeForm(int rowIndx) {
-            Form fc = new FeeCollection(student_ds.Tables[0].Rows[rowIndx]);
             fc.MdiParent = this.MdiParent;
             fc.Show();
         }
@@ -66,13 +88,14 @@ namespace Madrasah_Management_System
             string name = txt_name.Text;
             string its_id = txt_its_no.Text;
             string mhr_no = txt_mhr_no.Text;
-            if (name.Trim() != string.Empty) {
+            if (name.Trim() != string.Empty)
+            {
                 rowFilter += "name like '%" + name + "%'";
             }
             if (its_id.Trim() != string.Empty)
             {
                 rowFilter += rowFilter != "" ? " or " : "";
-                rowFilter +=  "its_id = '" + its_id + "'";
+                rowFilter += "its_id = '" + its_id + "'";
             }
             if (mhr_no.Trim() != string.Empty)
             {
@@ -82,6 +105,20 @@ namespace Madrasah_Management_System
 
             student_ds.Tables[0].DefaultView.RowFilter = rowFilter;
             dataGridView1.DataSource = student_ds.Tables[0].DefaultView;
+
+        }
+
+
+
+        private void edit_record_Click(object sender, EventArgs e)
+        {
+            showStudentForm(1);
+
+        }
+
+        private void receive_fee_Click(object sender, EventArgs e)
+        {
+            showStudentForm(2);
         }
     }
 }

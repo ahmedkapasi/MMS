@@ -33,15 +33,15 @@ namespace Madrasah_Management_System
                 txt_its_id.Text = studentRow["its_id"].ToString();
                 _studentID = studentRow["id"].ToString();
                 _feesAmount = studentRow["fees"].ToString();
-                cmb_pay_method.SelectedIndex = 0;
                 var incType = common.getDataSet("SELECT * FROM INC_EXP_HEADS WHERE TYPE='Income'");
                 cmb_inc_type.DataSource = incType.Tables[0];
-
+                string dfltType = incType.Tables[0].Select("sub_type=1")[0]["ID"].ToString();
+                cmb_inc_type.SelectedValue = int.Parse(dfltType);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+               MessageBox.Show(ex.Message);
             }
         }
         Form objForm;

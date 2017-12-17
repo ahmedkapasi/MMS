@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_its_no = new System.Windows.Forms.TextBox();
@@ -37,8 +38,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.edit_record = new System.Windows.Forms.ToolStripMenuItem();
+            this.receive_fee = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -47,6 +52,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(25, 133);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(674, 251);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -71,14 +77,14 @@
             this.txt_its_no.Location = new System.Drawing.Point(486, 31);
             this.txt_its_no.Name = "txt_its_no";
             this.txt_its_no.Size = new System.Drawing.Size(81, 20);
-            this.txt_its_no.TabIndex = 11;
+            this.txt_its_no.TabIndex = 3;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(583, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -97,7 +103,7 @@
             this.txt_mhr_no.Location = new System.Drawing.Point(330, 30);
             this.txt_mhr_no.Name = "txt_mhr_no";
             this.txt_mhr_no.Size = new System.Drawing.Size(90, 20);
-            this.txt_mhr_no.TabIndex = 6;
+            this.txt_mhr_no.TabIndex = 2;
             // 
             // label4
             // 
@@ -113,7 +119,7 @@
             this.txt_name.Location = new System.Drawing.Point(107, 30);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(137, 20);
-            this.txt_name.TabIndex = 4;
+            this.txt_name.TabIndex = 1;
             // 
             // label1
             // 
@@ -123,6 +129,28 @@
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Student Name";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.edit_record,
+            this.receive_fee});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            // 
+            // edit_record
+            // 
+            this.edit_record.Name = "edit_record";
+            this.edit_record.Size = new System.Drawing.Size(152, 22);
+            this.edit_record.Text = "Edit Record";
+            this.edit_record.Click += new System.EventHandler(this.edit_record_Click);
+            // 
+            // receive_fee
+            // 
+            this.receive_fee.Name = "receive_fee";
+            this.receive_fee.Size = new System.Drawing.Size(152, 22);
+            this.receive_fee.Text = "Receive Fees";
+            this.receive_fee.Click += new System.EventHandler(this.receive_fee_Click);
             // 
             // StudentSearch
             // 
@@ -140,6 +168,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -155,5 +184,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem edit_record;
+        private System.Windows.Forms.ToolStripMenuItem receive_fee;
     }
 }
