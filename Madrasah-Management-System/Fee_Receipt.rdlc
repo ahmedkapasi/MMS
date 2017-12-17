@@ -256,7 +256,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Period</rd:DefaultName>
-            <Top>1.36271cm</Top>
+            <Top>1.29921cm</Top>
             <Left>0.16287cm</Left>
             <Height>0.70583cm</Height>
             <Width>9.74758cm</Width>
@@ -291,7 +291,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>ReportHeading</rd:DefaultName>
-            <Top>0.46461cm</Top>
+            <Top>0.30586cm</Top>
             <Left>0.13112cm</Left>
             <Height>0.75875cm</Height>
             <Width>9.77933cm</Width>
@@ -319,9 +319,9 @@
           </Line>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>1.16381cm</Top>
+        <Top>0.21131cm</Top>
         <Left>0.10583cm</Left>
-        <Height>6.2652cm</Height>
+        <Height>5.78895cm</Height>
         <Width>10.16445cm</Width>
         <Style>
           <Border>
@@ -362,7 +362,7 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>7.74023cm</Top>
+        <Top>6.24798cm</Top>
         <Left>3.68596cm</Left>
         <Height>1.21742cm</Height>
         <Width>6.57374cm</Width>
@@ -374,7 +374,7 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>9.74641cm</Height>
+    <Height>7.6562cm</Height>
     <Style />
   </Body>
   <Width>10.64537cm</Width>
