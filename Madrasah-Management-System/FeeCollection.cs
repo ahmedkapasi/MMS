@@ -22,6 +22,7 @@ namespace Madrasah_Management_System
         private string _feesAmount;
         private DataSet _dsFeesData;
         private DataRow studentRow;
+        private Form objForm;
         public FeeCollection(DataRow studentRow)
         {
             InitializeComponent();
@@ -33,21 +34,21 @@ namespace Madrasah_Management_System
                 txt_stu_name.Text = studentRow["name"].ToString();
                 txt_mhr_no.Text = studentRow["mhr_no"].ToString();
                 txt_stu_std.Text = studentRow["standard"].ToString();
-                txt_mnth_fees.Text = studentRow["fees"].ToString();
+                //txt_mnth_fees.Text = studentRow["fees"].ToString();
                 txt_its_id.Text = studentRow["its_id"].ToString();
                 _studentID = studentRow["id"].ToString();
                 _feesAmount = studentRow["fees"].ToString();
                 cmb_pay_method.SelectedIndex = 0;
-                var incTypes = common.getDataSet("SELECT ID,NAME 'Fees Type','0.00' Amount FROM INC_EXP_HEADS WHERE TYPE='Income' AND SUB_TYPE=1");
+                //var incTypes = common.getDataSet("SELECT ID,NAME 'Fees Type','0.00' Amount FROM INC_EXP_HEADS WHERE TYPE='Income' AND SUB_TYPE=1");
                 //exp_heads_grid.DataSource = incTypes.Tables[0];
                 //exp_heads_grid.Columns[0].Visible = false;
                 //exp_heads_grid.Columns[1].Width = 150;
                 //exp_heads_grid.Columns[2].Width = 200;
                 //exp_heads_grid.Columns[1].ReadOnly = true;
+                //exp_heads_grid.EditingControlShowing += exp_heads_grid_EditingControlShowing;
                 //_dsFeesData = common.getDataSet("SELECT * FROM STANDARDS_FEES");
-                //var d = new DataGridViewTextBoxCell();
                 //exp_heads_grid.Columns[2].CellTemplate = new DataGridViewTextBoxCell();
-
+                
                 //cmb_inc_type.DataSource = incType.Tables[0];
                 //string dfltType = incType.Tables[0].Select("sub_type=1")[0]["ID"].ToString();
                 //cmb_inc_type.SelectedValue = int.Parse(dfltType);
@@ -58,7 +59,15 @@ namespace Madrasah_Management_System
                 MessageBox.Show(ex.Message);
             }
         }
-        Form objForm;
+
+        void exp_heads_grid_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            DataGridViewTextBoxEditingControl tb = (DataGridViewTextBoxEditingControl)e.Control;
+            tb.KeyPress += new KeyPressEventHandler(checkForNumbers);
+
+            e.Control.KeyPress += new KeyPressEventHandler(checkForNumbers);
+        }
+        
 
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,10 +93,10 @@ namespace Madrasah_Management_System
             //    MessageBox.Show("Please Enter Valid Amount for Fees");
             //    return;
             //}
-            if (calculateFees() == false)
-            {
-                return;
-            }
+            //if (calculateFees() == false)
+            //{
+            //    return;
+            //}
             string from_month = dp_from_month.Value.ToString("dd-MMM-yyyy");
             string to_month = dp_to_month.Value.ToString("dd-MMM-yyyy");
             string pay_method = cmb_pay_method.Text;
@@ -174,8 +183,15 @@ namespace Madrasah_Management_System
                 return false;
             }
             long month_count = common.DateDiff(common.DateInterval.Month, dp_from_month.Value, dp_to_month.Value);
-            _feesAmount = txt_mnth_fees.Text = (float.Parse(studentRow["fees"].ToString()) * month_count).ToString();
+            txt_fees.Text = _feesAmount  = (float.Parse(studentRow["fees"].ToString()) * month_count).ToString();
 
+            //foreach (DataGridViewRow gr in exp_heads_grid.Rows) { 
+            //   if(gr.Cells[0].Value.ToString() == "1") // for monthly fees
+            //   {
+            //       gr.Cells[2].Value = _feesAmount;
+            //   }
+                    
+            //}
             return true;
         }
 
@@ -199,20 +215,7 @@ namespace Madrasah_Management_System
             }
         }
 
-        private void chk_mnth_fees_CheckedChanged(object sender, EventArgs e)
-        {
-            txt_mnth_fees.Enabled = chk_mnth_fees.Checked;
-        }
-
-        private void chk_exm_fees_CheckedChanged(object sender, EventArgs e)
-        {
-            txt_exm_fees.Enabled = chk_exm_fees.Checked;
-        }
-
-        private void chk_anl_fees_CheckedChanged(object sender, EventArgs e)
-        {
-            txt_exm_fees.Enabled = chk_exm_fees.Checked;
-        }
+        
 
         
     }

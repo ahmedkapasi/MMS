@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmb_properties = new System.Windows.Forms.ComboBox();
             this.txt_tent_name = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmb_properties = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_rent_amt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dp_from = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.dp_to = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dp_from = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_rent_amt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,18 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Property Details";
+            // 
+            // cmb_properties
+            // 
+            this.cmb_properties.DisplayMember = "name";
+            this.cmb_properties.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_properties.Enabled = false;
+            this.cmb_properties.FormattingEnabled = true;
+            this.cmb_properties.Location = new System.Drawing.Point(100, 34);
+            this.cmb_properties.Name = "cmb_properties";
+            this.cmb_properties.Size = new System.Drawing.Size(304, 21);
+            this.cmb_properties.TabIndex = 12;
+            this.cmb_properties.ValueMember = "id";
             // 
             // txt_tent_name
             // 
@@ -85,18 +97,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Property";
             // 
-            // cmb_properties
-            // 
-            this.cmb_properties.DisplayMember = "name";
-            this.cmb_properties.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_properties.Enabled = false;
-            this.cmb_properties.FormattingEnabled = true;
-            this.cmb_properties.Location = new System.Drawing.Point(100, 34);
-            this.cmb_properties.Name = "cmb_properties";
-            this.cmb_properties.Size = new System.Drawing.Size(304, 21);
-            this.cmb_properties.TabIndex = 12;
-            this.cmb_properties.ValueMember = "id";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dp_to);
@@ -112,40 +112,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rent Details";
             // 
-            // label3
+            // dp_to
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Monhly Rent";
-            // 
-            // txt_rent_amt
-            // 
-            this.txt_rent_amt.Enabled = false;
-            this.txt_rent_amt.Location = new System.Drawing.Point(100, 67);
-            this.txt_rent_amt.Name = "txt_rent_amt";
-            this.txt_rent_amt.Size = new System.Drawing.Size(304, 20);
-            this.txt_rent_amt.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 100);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Rent From";
-            // 
-            // dp_from
-            // 
-            this.dp_from.Location = new System.Drawing.Point(98, 95);
-            this.dp_from.Name = "dp_from";
-            this.dp_from.Size = new System.Drawing.Size(122, 20);
-            this.dp_from.TabIndex = 12;
+            this.dp_to.Location = new System.Drawing.Point(282, 97);
+            this.dp_to.Name = "dp_to";
+            this.dp_to.Size = new System.Drawing.Size(122, 20);
+            this.dp_to.TabIndex = 14;
             // 
             // label4
             // 
@@ -157,12 +129,40 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Rent To";
             // 
-            // dp_to
+            // dp_from
             // 
-            this.dp_to.Location = new System.Drawing.Point(282, 97);
-            this.dp_to.Name = "dp_to";
-            this.dp_to.Size = new System.Drawing.Size(122, 20);
-            this.dp_to.TabIndex = 14;
+            this.dp_from.Location = new System.Drawing.Point(98, 95);
+            this.dp_from.Name = "dp_from";
+            this.dp_from.Size = new System.Drawing.Size(122, 20);
+            this.dp_from.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Rent From";
+            // 
+            // txt_rent_amt
+            // 
+            this.txt_rent_amt.Enabled = false;
+            this.txt_rent_amt.Location = new System.Drawing.Point(100, 67);
+            this.txt_rent_amt.Name = "txt_rent_amt";
+            this.txt_rent_amt.Size = new System.Drawing.Size(304, 20);
+            this.txt_rent_amt.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Monthly Rent";
             // 
             // RentCollection
             // 

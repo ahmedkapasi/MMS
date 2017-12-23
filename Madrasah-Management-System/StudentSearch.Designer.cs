@@ -41,6 +41,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.edit_record = new System.Windows.Forms.ToolStripMenuItem();
             this.receive_fee = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -92,9 +93,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(436, 34);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "ITS No.";
             // 
@@ -108,9 +110,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(272, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "MHR No.";
             // 
@@ -124,9 +127,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Student Name";
             // 
@@ -134,23 +138,31 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.edit_record,
-            this.receive_fee});
+            this.receive_fee,
+            this.copyNameToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(141, 70);
             // 
             // edit_record
             // 
             this.edit_record.Name = "edit_record";
-            this.edit_record.Size = new System.Drawing.Size(152, 22);
+            this.edit_record.Size = new System.Drawing.Size(140, 22);
             this.edit_record.Text = "Edit Record";
             this.edit_record.Click += new System.EventHandler(this.edit_record_Click);
             // 
             // receive_fee
             // 
             this.receive_fee.Name = "receive_fee";
-            this.receive_fee.Size = new System.Drawing.Size(152, 22);
+            this.receive_fee.Size = new System.Drawing.Size(140, 22);
             this.receive_fee.Text = "Receive Fees";
             this.receive_fee.Click += new System.EventHandler(this.receive_fee_Click);
+            // 
+            // copyNameToolStripMenuItem
+            // 
+            this.copyNameToolStripMenuItem.Name = "copyNameToolStripMenuItem";
+            this.copyNameToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.copyNameToolStripMenuItem.Text = "Copy Name";
+            this.copyNameToolStripMenuItem.Click += new System.EventHandler(this.copyNameToolStripMenuItem_Click);
             // 
             // StudentSearch
             // 
@@ -187,5 +199,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem edit_record;
         private System.Windows.Forms.ToolStripMenuItem receive_fee;
+        private System.Windows.Forms.ToolStripMenuItem copyNameToolStripMenuItem;
     }
 }

@@ -120,5 +120,21 @@ namespace Madrasah_Management_System
         {
             showStudentForm(2);
         }
+
+        private void copyNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataRow dr;
+            if (dataGridView1.DataSource.GetType() == typeof(DataView))
+            {
+                dr = (dataGridView1.DataSource as DataView).ToTable().Rows[_selectedRowIndx];
+            }
+            else
+            {
+                dr = (dataGridView1.DataSource as DataTable).Rows[_selectedRowIndx];
+            }
+            string name = dr["name"].ToString();
+            Clipboard.SetText(name);
+
+        }
     }
 }

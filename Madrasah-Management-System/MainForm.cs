@@ -76,7 +76,22 @@ namespace Madrasah_Management_System
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
+            common.showForm(new Income_Exp_Trans());
+        }
 
+        private void tenantRegistrationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            common.showForm(new Tenant_Registration());
+        }
+
+        private void propertyRegistrationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            common.showForm(new Property_Registration());
+        }
+
+        private void leasePropertyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            common.showForm(new Lease_Property());
         }
     }
 }

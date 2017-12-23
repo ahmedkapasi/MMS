@@ -29,16 +29,19 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.expenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tenantRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.propertyRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.leasePropertyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +56,48 @@
             this.menuStrip1.Size = new System.Drawing.Size(922, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.tenantRegistrationToolStripMenuItem,
+            this.propertyRegistrationToolStripMenuItem,
+            this.leasePropertyToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
+            this.toolStripMenuItem1.Text = "New";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(190, 22);
+            this.toolStripMenuItem2.Text = "Student Registration";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(192, 22);
+            this.toolStripMenuItem3.Text = "Income/Expense Head";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(190, 22);
+            this.toolStripMenuItem4.Text = "Fee Receipt";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(190, 22);
+            this.toolStripMenuItem5.Text = "Income/Exp Entry";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // reportsToolStripMenuItem
             // 
@@ -90,44 +135,26 @@
             this.studentToolStripMenuItem.Text = "Student";
             this.studentToolStripMenuItem.Click += new System.EventHandler(this.studentToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
+            // tenantRegistrationToolStripMenuItem
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
-            this.toolStripMenuItem1.Text = "New";
+            this.tenantRegistrationToolStripMenuItem.Name = "tenantRegistrationToolStripMenuItem";
+            this.tenantRegistrationToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.tenantRegistrationToolStripMenuItem.Text = "Tenant Registration";
+            this.tenantRegistrationToolStripMenuItem.Click += new System.EventHandler(this.tenantRegistrationToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem2
+            // propertyRegistrationToolStripMenuItem
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(190, 22);
-            this.toolStripMenuItem2.Text = "Student Registration";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.propertyRegistrationToolStripMenuItem.Name = "propertyRegistrationToolStripMenuItem";
+            this.propertyRegistrationToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.propertyRegistrationToolStripMenuItem.Text = "Property Registration";
+            this.propertyRegistrationToolStripMenuItem.Click += new System.EventHandler(this.propertyRegistrationToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem3
+            // leasePropertyToolStripMenuItem
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(190, 22);
-            this.toolStripMenuItem3.Text = "Income/Expense Type";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(190, 22);
-            this.toolStripMenuItem4.Text = "Fee Receipt";
-            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(190, 22);
-            this.toolStripMenuItem5.Text = "Expense";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            this.leasePropertyToolStripMenuItem.Name = "leasePropertyToolStripMenuItem";
+            this.leasePropertyToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.leasePropertyToolStripMenuItem.Text = "Lease Property";
+            this.leasePropertyToolStripMenuItem.Click += new System.EventHandler(this.leasePropertyToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -160,6 +187,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem tenantRegistrationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem propertyRegistrationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem leasePropertyToolStripMenuItem;
     }
 }
 
