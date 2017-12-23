@@ -347,7 +347,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
             <Top>0.32638cm</Top>
-            <Left>0.43837cm</Left>
+            <Left>0.09441cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <Style>
@@ -363,9 +363,9 @@
         </ReportItems>
         <KeepTogether>true</KeepTogether>
         <Top>6.24798cm</Top>
-        <Left>3.68596cm</Left>
+        <Left>4.02992cm</Left>
         <Height>1.21742cm</Height>
-        <Width>6.57374cm</Width>
+        <Width>6.22978cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

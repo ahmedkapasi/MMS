@@ -27,7 +27,7 @@ namespace Madrasah_Management_System
 
         private void loadData() {
 
-            DataSet ds = common.getDataSet("SELECT ID,Name,TYPE Type,GL_CODE 'GL Code' FROM INC_EXP_HEADS");
+            DataSet ds = common.getDataSet("SELECT ID,Name,TYPE Type,GL_CODE 'GL Code'FROM INC_EXP_HEADS");
             dataGridView1.DataSource = ds.Tables[0];
             dataGridView1.Columns["ID"].Visible = false;
             dataGridView1.Columns["NAME"].Width = 150;

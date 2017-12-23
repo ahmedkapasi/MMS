@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_reset = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_gl_code = new System.Windows.Forms.TextBox();
             this.cmb_type = new System.Windows.Forms.ComboBox();
@@ -37,7 +38,6 @@
             this.btn_save = new System.Windows.Forms.Button();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_reset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -54,15 +54,25 @@
             this.groupBox1.Controls.Add(this.txt_name);
             this.groupBox1.Location = new System.Drawing.Point(27, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(383, 160);
+            this.groupBox1.Size = new System.Drawing.Size(383, 142);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New Expense";
             // 
+            // btn_reset
+            // 
+            this.btn_reset.Location = new System.Drawing.Point(124, 103);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(75, 23);
+            this.btn_reset.TabIndex = 4;
+            this.btn_reset.Text = "New";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 75);
+            this.label2.Location = new System.Drawing.Point(21, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 13;
@@ -70,7 +80,7 @@
             // 
             // txt_gl_code
             // 
-            this.txt_gl_code.Location = new System.Drawing.Point(85, 72);
+            this.txt_gl_code.Location = new System.Drawing.Point(85, 74);
             this.txt_gl_code.Name = "txt_gl_code";
             this.txt_gl_code.Size = new System.Drawing.Size(212, 20);
             this.txt_gl_code.TabIndex = 3;
@@ -107,7 +117,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(222, 109);
+            this.btn_save.Location = new System.Drawing.Point(222, 103);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 5;
@@ -125,22 +135,12 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 187);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 171);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(383, 284);
+            this.dataGridView1.Size = new System.Drawing.Size(383, 300);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.TabStop = false;
-            // 
-            // btn_reset
-            // 
-            this.btn_reset.Location = new System.Drawing.Point(124, 109);
-            this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(75, 23);
-            this.btn_reset.TabIndex = 4;
-            this.btn_reset.Text = "New";
-            this.btn_reset.UseVisualStyleBackColor = true;
-            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // ExpenseMaster
             // 

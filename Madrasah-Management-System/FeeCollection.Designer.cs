@@ -28,19 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmb_pay_method = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_comments = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.chk_fees = new System.Windows.Forms.CheckBox();
-            this.chk_inc_type = new System.Windows.Forms.CheckBox();
-            this.cmb_inc_type = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_fees = new System.Windows.Forms.TextBox();
-            this.dp_for_month = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.btn_save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_stu_name = new System.Windows.Forms.TextBox();
@@ -52,156 +39,39 @@
             this.txt_mhr_no = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dp_from_month = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmb_pay_method = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dp_to_month = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_comments = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_mnth_fees = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_anl_fees = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_bks_chrgs = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_exm_fees = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.chk_mnth_fees = new System.Windows.Forms.CheckBox();
+            this.chk_exm_fees = new System.Windows.Forms.CheckBox();
+            this.chk_anl_fees = new System.Windows.Forms.CheckBox();
+            this.chk_bks_chgs = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cmb_pay_method);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txt_comments);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.chk_fees);
-            this.groupBox1.Controls.Add(this.chk_inc_type);
-            this.groupBox1.Controls.Add(this.cmb_inc_type);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt_fees);
-            this.groupBox1.Controls.Add(this.dp_for_month);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(39, 208);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(641, 174);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fees Details";
-            // 
-            // cmb_pay_method
-            // 
-            this.cmb_pay_method.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_pay_method.FormattingEnabled = true;
-            this.cmb_pay_method.Items.AddRange(new object[] {
-            "Cash",
-            "Cheque"});
-            this.cmb_pay_method.Location = new System.Drawing.Point(84, 110);
-            this.cmb_pay_method.Name = "cmb_pay_method";
-            this.cmb_pay_method.Size = new System.Drawing.Size(194, 21);
-            this.cmb_pay_method.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 113);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Pay Method";
-            // 
-            // txt_comments
-            // 
-            this.txt_comments.Location = new System.Drawing.Point(386, 74);
-            this.txt_comments.Name = "txt_comments";
-            this.txt_comments.Size = new System.Drawing.Size(236, 69);
-            this.txt_comments.TabIndex = 14;
-            this.txt_comments.Text = "";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(316, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Comments";
-            // 
-            // chk_fees
-            // 
-            this.chk_fees.AutoSize = true;
-            this.chk_fees.Location = new System.Drawing.Point(220, 71);
-            this.chk_fees.Name = "chk_fees";
-            this.chk_fees.Size = new System.Drawing.Size(63, 17);
-            this.chk_fees.TabIndex = 12;
-            this.chk_fees.Text = "Change";
-            this.chk_fees.UseVisualStyleBackColor = true;
-            this.chk_fees.CheckedChanged += new System.EventHandler(this.chk_fees_CheckedChanged);
-            // 
-            // chk_inc_type
-            // 
-            this.chk_inc_type.AutoSize = true;
-            this.chk_inc_type.Location = new System.Drawing.Point(559, 37);
-            this.chk_inc_type.Name = "chk_inc_type";
-            this.chk_inc_type.Size = new System.Drawing.Size(63, 17);
-            this.chk_inc_type.TabIndex = 11;
-            this.chk_inc_type.Text = "Change";
-            this.chk_inc_type.UseVisualStyleBackColor = true;
-            this.chk_inc_type.CheckedChanged += new System.EventHandler(this.chk_inc_type_CheckedChanged);
-            // 
-            // cmb_inc_type
-            // 
-            this.cmb_inc_type.DisplayMember = "name";
-            this.cmb_inc_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_inc_type.Enabled = false;
-            this.cmb_inc_type.FormattingEnabled = true;
-            this.cmb_inc_type.Location = new System.Drawing.Point(386, 31);
-            this.cmb_inc_type.Name = "cmb_inc_type";
-            this.cmb_inc_type.Size = new System.Drawing.Size(161, 21);
-            this.cmb_inc_type.TabIndex = 10;
-            this.cmb_inc_type.ValueMember = "id";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(300, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Income Type";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Fees Amount";
-            // 
-            // txt_fees
-            // 
-            this.txt_fees.Enabled = false;
-            this.txt_fees.Location = new System.Drawing.Point(84, 72);
-            this.txt_fees.Name = "txt_fees";
-            this.txt_fees.Size = new System.Drawing.Size(125, 20);
-            this.txt_fees.TabIndex = 6;
-            // 
-            // dp_for_month
-            // 
-            this.dp_for_month.Location = new System.Drawing.Point(84, 35);
-            this.dp_for_month.Name = "dp_for_month";
-            this.dp_for_month.Size = new System.Drawing.Size(194, 20);
-            this.dp_for_month.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "For Month";
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(278, 399);
+            this.btn_save.Location = new System.Drawing.Point(215, 489);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(110, 23);
-            this.btn_save.TabIndex = 0;
+            this.btn_save.TabIndex = 9;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -221,7 +91,7 @@
             this.txt_stu_name.Enabled = false;
             this.txt_stu_name.Location = new System.Drawing.Point(100, 30);
             this.txt_stu_name.Name = "txt_stu_name";
-            this.txt_stu_name.Size = new System.Drawing.Size(522, 20);
+            this.txt_stu_name.Size = new System.Drawing.Size(316, 20);
             this.txt_stu_name.TabIndex = 4;
             // 
             // groupBox2
@@ -236,17 +106,16 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(39, 51);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(641, 132);
+            this.groupBox2.Size = new System.Drawing.Size(449, 132);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Student Details";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(420, 75);
+            this.label8.Location = new System.Drawing.Point(292, 75);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 11;
@@ -255,9 +124,9 @@
             // txt_its_id
             // 
             this.txt_its_id.Enabled = false;
-            this.txt_its_id.Location = new System.Drawing.Point(470, 72);
+            this.txt_its_id.Location = new System.Drawing.Point(342, 72);
             this.txt_its_id.Name = "txt_its_id";
-            this.txt_its_id.Size = new System.Drawing.Size(152, 20);
+            this.txt_its_id.Size = new System.Drawing.Size(74, 20);
             this.txt_its_id.TabIndex = 10;
             // 
             // txt_stu_std
@@ -265,7 +134,7 @@
             this.txt_stu_std.Enabled = false;
             this.txt_stu_std.Location = new System.Drawing.Point(100, 72);
             this.txt_stu_std.Name = "txt_stu_std";
-            this.txt_stu_std.Size = new System.Drawing.Size(71, 20);
+            this.txt_stu_std.Size = new System.Drawing.Size(51, 20);
             this.txt_stu_std.TabIndex = 8;
             // 
             // label5
@@ -281,16 +150,16 @@
             // txt_mhr_no
             // 
             this.txt_mhr_no.Enabled = false;
-            this.txt_mhr_no.Location = new System.Drawing.Point(252, 72);
+            this.txt_mhr_no.Location = new System.Drawing.Point(219, 72);
             this.txt_mhr_no.Name = "txt_mhr_no";
-            this.txt_mhr_no.Size = new System.Drawing.Size(152, 20);
+            this.txt_mhr_no.Size = new System.Drawing.Size(67, 20);
             this.txt_mhr_no.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(190, 75);
+            this.label4.Location = new System.Drawing.Point(157, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 7;
@@ -300,17 +169,251 @@
             // 
             this.button2.Location = new System.Drawing.Point(39, 12);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(641, 23);
+            this.button2.Size = new System.Drawing.Size(449, 23);
             this.button2.TabIndex = 8;
             this.button2.Text = "Search Student";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Fees From";
+            // 
+            // dp_from_month
+            // 
+            this.dp_from_month.Location = new System.Drawing.Point(84, 35);
+            this.dp_from_month.Name = "dp_from_month";
+            this.dp_from_month.Size = new System.Drawing.Size(131, 20);
+            this.dp_from_month.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(237, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Comments";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(9, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Pay Method";
+            // 
+            // cmb_pay_method
+            // 
+            this.cmb_pay_method.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_pay_method.FormattingEnabled = true;
+            this.cmb_pay_method.Items.AddRange(new object[] {
+            "Cash",
+            "Cheque"});
+            this.cmb_pay_method.Location = new System.Drawing.Point(84, 71);
+            this.cmb_pay_method.Name = "cmb_pay_method";
+            this.cmb_pay_method.Size = new System.Drawing.Size(131, 21);
+            this.cmb_pay_method.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_comments);
+            this.groupBox1.Controls.Add(this.dp_to_month);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cmb_pay_method);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.dp_from_month);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(39, 196);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(449, 112);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Fees Details";
+            // 
+            // dp_to_month
+            // 
+            this.dp_to_month.CustomFormat = "";
+            this.dp_to_month.Location = new System.Drawing.Point(307, 40);
+            this.dp_to_month.Name = "dp_to_month";
+            this.dp_to_month.Size = new System.Drawing.Size(130, 20);
+            this.dp_to_month.TabIndex = 2;
+            this.dp_to_month.ValueChanged += new System.EventHandler(this.dp_to_month_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(249, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Fees To";
+            // 
+            // txt_comments
+            // 
+            this.txt_comments.Enabled = false;
+            this.txt_comments.Location = new System.Drawing.Point(307, 71);
+            this.txt_comments.Name = "txt_comments";
+            this.txt_comments.Size = new System.Drawing.Size(130, 20);
+            this.txt_comments.TabIndex = 4;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.chk_bks_chgs);
+            this.groupBox3.Controls.Add(this.chk_anl_fees);
+            this.groupBox3.Controls.Add(this.chk_exm_fees);
+            this.groupBox3.Controls.Add(this.chk_mnth_fees);
+            this.groupBox3.Controls.Add(this.txt_bks_chrgs);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.txt_exm_fees);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.txt_anl_fees);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.txt_mnth_fees);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Location = new System.Drawing.Point(39, 326);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(449, 143);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Fees Amount";
+            // 
+            // txt_mnth_fees
+            // 
+            this.txt_mnth_fees.Enabled = false;
+            this.txt_mnth_fees.Location = new System.Drawing.Point(106, 22);
+            this.txt_mnth_fees.Name = "txt_mnth_fees";
+            this.txt_mnth_fees.Size = new System.Drawing.Size(230, 20);
+            this.txt_mnth_fees.TabIndex = 5;
+            this.txt_mnth_fees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForNumbers);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Monthly Fees";
+            // 
+            // txt_anl_fees
+            // 
+            this.txt_anl_fees.Enabled = false;
+            this.txt_anl_fees.Location = new System.Drawing.Point(107, 82);
+            this.txt_anl_fees.Name = "txt_anl_fees";
+            this.txt_anl_fees.Size = new System.Drawing.Size(229, 20);
+            this.txt_anl_fees.TabIndex = 6;
+            this.txt_anl_fees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForNumbers);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(24, 82);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Annual Fees";
+            // 
+            // txt_bks_chrgs
+            // 
+            this.txt_bks_chrgs.Enabled = false;
+            this.txt_bks_chrgs.Location = new System.Drawing.Point(107, 112);
+            this.txt_bks_chrgs.Name = "txt_bks_chrgs";
+            this.txt_bks_chrgs.Size = new System.Drawing.Size(229, 20);
+            this.txt_bks_chrgs.TabIndex = 8;
+            this.txt_bks_chrgs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForNumbers);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(9, 113);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(92, 13);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Books Charges";
+            // 
+            // txt_exm_fees
+            // 
+            this.txt_exm_fees.Enabled = false;
+            this.txt_exm_fees.Location = new System.Drawing.Point(106, 52);
+            this.txt_exm_fees.Name = "txt_exm_fees";
+            this.txt_exm_fees.Size = new System.Drawing.Size(230, 20);
+            this.txt_exm_fees.TabIndex = 7;
+            this.txt_exm_fees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForNumbers);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(23, 55);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 13);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Exam Fees";
+            // 
+            // chk_mnth_fees
+            // 
+            this.chk_mnth_fees.AutoSize = true;
+            this.chk_mnth_fees.Location = new System.Drawing.Point(343, 24);
+            this.chk_mnth_fees.Name = "chk_mnth_fees";
+            this.chk_mnth_fees.Size = new System.Drawing.Size(56, 17);
+            this.chk_mnth_fees.TabIndex = 18;
+            this.chk_mnth_fees.Text = "Select";
+            this.chk_mnth_fees.UseVisualStyleBackColor = true;
+            this.chk_mnth_fees.CheckedChanged += new System.EventHandler(this.chk_mnth_fees_CheckedChanged);
+            // 
+            // chk_exm_fees
+            // 
+            this.chk_exm_fees.AutoSize = true;
+            this.chk_exm_fees.Location = new System.Drawing.Point(342, 55);
+            this.chk_exm_fees.Name = "chk_exm_fees";
+            this.chk_exm_fees.Size = new System.Drawing.Size(56, 17);
+            this.chk_exm_fees.TabIndex = 19;
+            this.chk_exm_fees.Text = "Select";
+            this.chk_exm_fees.UseVisualStyleBackColor = true;
+            this.chk_exm_fees.CheckedChanged += new System.EventHandler(this.chk_exm_fees_CheckedChanged);
+            // 
+            // chk_anl_fees
+            // 
+            this.chk_anl_fees.AutoSize = true;
+            this.chk_anl_fees.Location = new System.Drawing.Point(342, 85);
+            this.chk_anl_fees.Name = "chk_anl_fees";
+            this.chk_anl_fees.Size = new System.Drawing.Size(56, 17);
+            this.chk_anl_fees.TabIndex = 20;
+            this.chk_anl_fees.Text = "Select";
+            this.chk_anl_fees.UseVisualStyleBackColor = true;
+            this.chk_anl_fees.CheckedChanged += new System.EventHandler(this.chk_anl_fees_CheckedChanged);
+            // 
+            // chk_bks_chgs
+            // 
+            this.chk_bks_chgs.AutoSize = true;
+            this.chk_bks_chgs.Location = new System.Drawing.Point(343, 113);
+            this.chk_bks_chgs.Name = "chk_bks_chgs";
+            this.chk_bks_chgs.Size = new System.Drawing.Size(56, 17);
+            this.chk_bks_chgs.TabIndex = 21;
+            this.chk_bks_chgs.Text = "Select";
+            this.chk_bks_chgs.UseVisualStyleBackColor = true;
+            // 
             // FeeCollection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 439);
+            this.ClientSize = new System.Drawing.Size(546, 569);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -321,39 +424,50 @@
             this.Name = "FeeCollection";
             this.Text = "Fee Collection";
             this.Load += new System.EventHandler(this.FeeCollection_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_fees;
-        private System.Windows.Forms.DateTimePicker dp_for_month;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_stu_name;
         private System.Windows.Forms.TextBox txt_mhr_no;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox chk_fees;
-        private System.Windows.Forms.CheckBox chk_inc_type;
-        private System.Windows.Forms.ComboBox cmb_inc_type;
         private System.Windows.Forms.TextBox txt_stu_std;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox txt_comments;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmb_pay_method;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_its_id;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dp_from_month;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmb_pay_method;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dp_to_month;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_comments;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txt_bks_chrgs;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt_exm_fees;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txt_anl_fees;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_mnth_fees;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chk_bks_chgs;
+        private System.Windows.Forms.CheckBox chk_anl_fees;
+        private System.Windows.Forms.CheckBox chk_exm_fees;
+        private System.Windows.Forms.CheckBox chk_mnth_fees;
     }
 }
