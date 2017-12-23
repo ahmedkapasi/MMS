@@ -173,11 +173,11 @@
             // 
             // txt_fees
             // 
-            this.txt_fees.Enabled = false;
             this.txt_fees.Location = new System.Drawing.Point(94, 125);
             this.txt_fees.Name = "txt_fees";
             this.txt_fees.Size = new System.Drawing.Size(231, 20);
             this.txt_fees.TabIndex = 25;
+            this.txt_fees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForNumbers);
             // 
             // Lease_Property
             // 
