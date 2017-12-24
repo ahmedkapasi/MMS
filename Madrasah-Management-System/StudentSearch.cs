@@ -57,18 +57,13 @@ namespace Madrasah_Management_System
             }
         }
 
+        
+
         void showStudentForm(int formType)
         {
-            DataRow dr;
-            if (dataGridView1.DataSource.GetType() == typeof(DataView))
-            {
-                dr = (dataGridView1.DataSource as DataView).ToTable().Rows[_selectedRowIndx];
-            }
-            else
-            {
-                dr = (dataGridView1.DataSource as DataTable).Rows[_selectedRowIndx];
-            }
+            
             Form fc;
+            DataRow dr = getSelectedRow();
             if (formType == 1)
             {
                 fc = new Student_Registration(dr);
@@ -79,6 +74,20 @@ namespace Madrasah_Management_System
             
             fc.MdiParent = this.MdiParent;
             fc.Show();
+        }
+
+        private DataRow getSelectedRow()
+        {
+            DataRow dr;
+            if (dataGridView1.DataSource.GetType() == typeof(DataView))
+            {
+                dr = (dataGridView1.DataSource as DataView).ToTable().Rows[_selectedRowIndx];
+            }
+            else
+            {
+                dr = (dataGridView1.DataSource as DataTable).Rows[_selectedRowIndx];
+            }
+            return dr;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -123,18 +132,16 @@ namespace Madrasah_Management_System
 
         private void copyNameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataRow dr;
-            if (dataGridView1.DataSource.GetType() == typeof(DataView))
-            {
-                dr = (dataGridView1.DataSource as DataView).ToTable().Rows[_selectedRowIndx];
-            }
-            else
-            {
-                dr = (dataGridView1.DataSource as DataTable).Rows[_selectedRowIndx];
-            }
+            DataRow dr = getSelectedRow();
             string name = dr["name"].ToString();
             Clipboard.SetText(name);
 
+        }
+
+        private void newIncExpEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataRow dr = getSelectedRow();
+            common.showForm(new Income_Exp_Trans(dr));
         }
     }
 }
