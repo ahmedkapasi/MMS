@@ -117,13 +117,6 @@
             this.cmb_standard.DisplayMember = "name";
             this.cmb_standard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_standard.FormattingEnabled = true;
-            this.cmb_standard.Items.AddRange(new object[] {
-            "First",
-            "Second",
-            "Third",
-            "Forth",
-            "Fifth",
-            "Sixth"});
             this.cmb_standard.Location = new System.Drawing.Point(315, 141);
             this.cmb_standard.Name = "cmb_standard";
             this.cmb_standard.Size = new System.Drawing.Size(101, 21);

@@ -24,29 +24,7 @@ namespace Madrasah_Management_System
 
         }
 
-        private void studentRegistrationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void expenseMasterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void incomeMasterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void feeReceiptToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
+        
         private void studentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             common.showForm(new StudentSearch());
@@ -92,6 +70,31 @@ namespace Madrasah_Management_System
         private void leasePropertyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             common.showForm(new Lease_Property());
+        }
+
+        private void studentRegistrationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            common.showForm(new Student_Registration());
+        }
+
+        private void rentReceiptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            common.showForm(new RentCollection());
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            common.showForm(new ExpenseMaster());
+        }
+
+        private void tenantRegistrationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            common.showForm(new Tenant_Registration());
+        }
+
+        private void propertyRegistrationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            common.showForm(new Property_Registration());
         }
     }
 }

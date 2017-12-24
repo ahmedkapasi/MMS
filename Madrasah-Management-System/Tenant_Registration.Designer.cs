@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_address = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_pan_no = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_adhaar_no = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -40,10 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_save = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt_pan_no = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_address = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,13 +64,48 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_name);
             this.groupBox1.Controls.Add(this.btn_save);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(429, 290);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tenant Details";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 145);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Permanent Address";
+            // 
+            // txt_address
+            // 
+            this.txt_address.Location = new System.Drawing.Point(139, 142);
+            this.txt_address.Multiline = true;
+            this.txt_address.Name = "txt_address";
+            this.txt_address.Size = new System.Drawing.Size(277, 72);
+            this.txt_address.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(73, 67);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "PAN No.";
+            // 
+            // txt_pan_no
+            // 
+            this.txt_pan_no.Location = new System.Drawing.Point(139, 64);
+            this.txt_pan_no.Name = "txt_pan_no";
+            this.txt_pan_no.Size = new System.Drawing.Size(277, 20);
+            this.txt_pan_no.TabIndex = 3;
             // 
             // label7
             // 
@@ -87,7 +122,7 @@
             this.txt_adhaar_no.Location = new System.Drawing.Point(139, 90);
             this.txt_adhaar_no.Name = "txt_adhaar_no";
             this.txt_adhaar_no.Size = new System.Drawing.Size(277, 20);
-            this.txt_adhaar_no.TabIndex = 5;
+            this.txt_adhaar_no.TabIndex = 4;
             // 
             // label6
             // 
@@ -112,6 +147,7 @@
             "Male",
             "Female"});
             this.cmb_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_gender.FormattingEnabled = true;
             this.cmb_gender.Items.AddRange(new object[] {
             "Male",
@@ -146,7 +182,7 @@
             this.txt_its_id.Location = new System.Drawing.Point(139, 116);
             this.txt_its_id.Name = "txt_its_id";
             this.txt_its_id.Size = new System.Drawing.Size(110, 20);
-            this.txt_its_id.TabIndex = 3;
+            this.txt_its_id.TabIndex = 5;
             // 
             // label1
             // 
@@ -167,48 +203,13 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(193, 238);
+            this.btn_save.Location = new System.Drawing.Point(159, 238);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 23);
+            this.btn_save.Size = new System.Drawing.Size(119, 25);
             this.btn_save.TabIndex = 8;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(73, 67);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 13);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "PAN No.";
-            // 
-            // txt_pan_no
-            // 
-            this.txt_pan_no.Location = new System.Drawing.Point(139, 64);
-            this.txt_pan_no.Name = "txt_pan_no";
-            this.txt_pan_no.Size = new System.Drawing.Size(277, 20);
-            this.txt_pan_no.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Permanent Address";
-            // 
-            // txt_address
-            // 
-            this.txt_address.Location = new System.Drawing.Point(139, 142);
-            this.txt_address.Multiline = true;
-            this.txt_address.Name = "txt_address";
-            this.txt_address.Size = new System.Drawing.Size(277, 72);
-            this.txt_address.TabIndex = 19;
             // 
             // Tenant_Registration
             // 

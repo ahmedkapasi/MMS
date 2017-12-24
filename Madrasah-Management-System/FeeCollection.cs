@@ -101,7 +101,7 @@ namespace Madrasah_Management_System
             string to_month = dp_to_month.Value.ToString("dd-MMM-yyyy");
             string pay_method = cmb_pay_method.Text;
             string incm_type = "(SELECT ID FROM INC_EXP_HEADS WHERE SUB_TYPE = 1)";//cmb_inc_type.SelectedValue.ToString();
-            string fees_paid = "0";// txt_fees.Text;
+            string fees_paid = txt_fees.Text;
             string comments = txt_comments.Text.Trim();
             string insertCmd = "";
             if (checkIfDuplicate() == true)
@@ -116,7 +116,7 @@ namespace Madrasah_Management_System
             {
                 comments = string.Format("Received amount {0} against income head {1}", fees_paid, "Monthly Fees");
             }
-            insertCmd = string.Format(@"INSERT INTO FEES_DETAILS(STUDENT,FEES_FROM,FEES_TO,PAYMENT_METHOD,INCOME_HEAD,FEES_AMOUNT,FEES_PAID,COMMENTS) 
+            insertCmd = string.Format(@"INSERT INTO FEES_DETAILS(STUDENT,FEES_FROM,FEES_TO,PAYMENT_METHOD,INC_EXP_HEAD,FEES_AMT,FEES_PAID,COMMENTS) 
             VALUES({0},'{1}','{2}','{3}',{4},{5},{6},'{7}')", _studentID, from_month, to_month, pay_method, incm_type, _feesAmount, fees_paid, comments);
             string returnVal = common.updateTable(insertCmd);
             if (returnVal == common.SUCCESS_MSG)
@@ -159,10 +159,10 @@ namespace Madrasah_Management_System
         private bool checkIfDuplicate()
         {
             //string incmHd = cmb_inc_type.SelectedValue.ToString();
-            string year = dp_from_month.Value.Year.ToString();
-            string month = dp_from_month.Value.Month.ToString();
+            string fees_from = dp_from_month.Value.ToString("yyyy-MMM-dd");
+            string fees_to = dp_from_month.Value.ToString("yyyy-MMM-dd");
             string selCmd = string.Format(@"SELECT * FROM FEES_DETAILS WHERE STUDENT = {0} AND
-            MONTH(FEES_FOR)={1} AND YEAR(FEES_FOR)={2}", _studentID, month, year);
+            FEES_FROM BETWEEN '{1}' AND '{2}' OR FEES_TO BETWEEN '{1}' AND '{2}'", _studentID,fees_from,fees_to);
             var ds = common.getDataSet(selCmd);
 
             if (ds.Tables[0].Rows.Count > 0)

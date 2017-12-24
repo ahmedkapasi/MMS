@@ -24,7 +24,8 @@ namespace Madrasah_Management_System
             InitializeComponent();
             isEdit = true;
             DataSet ds = common.getDataSet("SELECT * FROM STUDENTS WHERE ID=" + dataRow["ID"].ToString());
-            if (ds.Tables[0].Rows.Count > 0) {
+            if (ds.Tables[0].Rows.Count > 0)
+            {
                 fillStandardsCombo();
                 DataRow dr = dataRowEdited = ds.Tables[0].Rows[0];
                 txt_name.Text = dr["name"].ToString();
@@ -33,21 +34,21 @@ namespace Madrasah_Management_System
                 txt_dob_hijri.Text = dr["dob_hijri"].ToString();
                 cmb_standard.SelectedValue = int.Parse(dr["standard"].ToString());
                 cmb_gender.SelectedIndex = dr["gender"].ToString() == "Male" ? 0 : 1;
-                dp_dob.Value = dr["dob"].ToString() == string.Empty ? DateTime.Now :  DateTime.Parse(dr["dob"].ToString());
+                dp_dob.Value = dr["dob"].ToString() == string.Empty ? DateTime.Now : DateTime.Parse(dr["dob"].ToString());
             }
         }
-        private void fillStandardsCombo() {
+        private void fillStandardsCombo()
+        {
             DataSet ds = common.getDataSet("SELECT * FROM STANDARDS");
             cmb_standard.DataSource = ds.Tables[0];
             cmb_gender.SelectedIndex = 0;
         }
         private void Student_Registration_Load(object sender, EventArgs e)
         {
-            if (cmb_standard.Items.Count == 0)
-            {
-                fillStandardsCombo();
-            }
 
+            fillStandardsCombo();
+            cmb_gender.SelectedIndex = 0;
+            cmb_standard.SelectedIndex = 0;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -70,13 +71,14 @@ namespace Madrasah_Management_System
             {
                 string studentID = dataRowEdited["ID"].ToString();
                 dmlCmd = string.Format(@"UPDATE STUDENTS SET NAME='{0}',ITS_ID='{1}',DOB='{2}',DOB_HIJRI='{3}',GENDER='{4}',STANDARD='{5}',ADDRESS='{6}',PHONE_NO='{7}' 
-                            WHERE ID = {8}", name, its_id, dob, dob_hijri, gender, standard, address, phone,studentID);
+                            WHERE ID = {8}", name, its_id, dob, dob_hijri, gender, standard, address, phone, studentID);
             }
-            else {
+            else
+            {
                 dmlCmd = string.Format(@"INSERT INTO STUDENTS(NAME,MHR_NO,ITS_ID,DOB,DOB_HIJRI,GENDER,STANDARD,ADDRESS,PHONE_NO) 
                             VALUES('{0}',{1},'{2}','{3}','{4}','{5}',{6},'{7}','{8}')", name, mhr_no, its_id, dob, dob_hijri, gender, standard, address, phone);
             }
-            
+
             string retVal = common.updateTable(dmlCmd);
             if (retVal == common.SUCCESS_MSG)
             {

@@ -31,12 +31,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_inc_head = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_save = new System.Windows.Forms.Button();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.dg_prop_dtls = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_prop_dtls)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -82,16 +84,6 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Property Address";
             // 
-            // btn_save
-            // 
-            this.btn_save.Location = new System.Drawing.Point(187, 135);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 24);
-            this.btn_save.TabIndex = 4;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
             // txt_address
             // 
             this.txt_address.Location = new System.Drawing.Point(139, 70);
@@ -127,17 +119,40 @@
             this.txt_name.Size = new System.Drawing.Size(231, 20);
             this.txt_name.TabIndex = 1;
             // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(163, 135);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(99, 24);
+            this.btn_save.TabIndex = 4;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // dg_prop_dtls
+            // 
+            this.dg_prop_dtls.AllowUserToAddRows = false;
+            this.dg_prop_dtls.AllowUserToDeleteRows = false;
+            this.dg_prop_dtls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_prop_dtls.Location = new System.Drawing.Point(25, 222);
+            this.dg_prop_dtls.Name = "dg_prop_dtls";
+            this.dg_prop_dtls.ReadOnly = true;
+            this.dg_prop_dtls.Size = new System.Drawing.Size(411, 226);
+            this.dg_prop_dtls.TabIndex = 15;
+            // 
             // Property_Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 230);
+            this.ClientSize = new System.Drawing.Size(456, 490);
+            this.Controls.Add(this.dg_prop_dtls);
             this.Controls.Add(this.groupBox1);
             this.Name = "Property_Registration";
             this.Text = "Property Registration";
             this.Load += new System.EventHandler(this.Property_Registration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_prop_dtls)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,7 +165,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_name;
-        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.ComboBox cmb_inc_head;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.DataGridView dg_prop_dtls;
     }
 }

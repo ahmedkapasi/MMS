@@ -45,11 +45,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmb_pay_method = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dp_to_month = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_comments = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_fees = new System.Windows.Forms.TextBox();
+            this.txt_comments = new System.Windows.Forms.TextBox();
+            this.dp_to_month = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -231,6 +231,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fees Details";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(257, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Amount";
+            // 
+            // txt_fees
+            // 
+            this.txt_fees.Location = new System.Drawing.Point(307, 74);
+            this.txt_fees.Name = "txt_fees";
+            this.txt_fees.Size = new System.Drawing.Size(130, 20);
+            this.txt_fees.TabIndex = 19;
+            this.txt_fees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForNumbers);
+            // 
+            // txt_comments
+            // 
+            this.txt_comments.Location = new System.Drawing.Point(86, 109);
+            this.txt_comments.Multiline = true;
+            this.txt_comments.Name = "txt_comments";
+            this.txt_comments.Size = new System.Drawing.Size(351, 34);
+            this.txt_comments.TabIndex = 4;
+            // 
             // dp_to_month
             // 
             this.dp_to_month.CustomFormat = "";
@@ -249,34 +275,6 @@
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 18;
             this.label6.Text = "Fees To";
-            // 
-            // txt_comments
-            // 
-            this.txt_comments.Enabled = false;
-            this.txt_comments.Location = new System.Drawing.Point(86, 109);
-            this.txt_comments.Multiline = true;
-            this.txt_comments.Name = "txt_comments";
-            this.txt_comments.Size = new System.Drawing.Size(351, 34);
-            this.txt_comments.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(257, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Amount";
-            // 
-            // txt_fees
-            // 
-            this.txt_fees.Enabled = false;
-            this.txt_fees.Location = new System.Drawing.Point(307, 74);
-            this.txt_fees.Name = "txt_fees";
-            this.txt_fees.Size = new System.Drawing.Size(130, 20);
-            this.txt_fees.TabIndex = 19;
-            this.txt_fees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForNumbers);
             // 
             // FeeCollection
             // 

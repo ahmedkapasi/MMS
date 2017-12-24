@@ -22,6 +22,16 @@ namespace Madrasah_Management_System
             var ds = common.getDataSet("SELECT * FROM INC_EXP_HEADS WHERE TYPE = 'Income'");
             cmb_inc_head.DataSource = ds.Tables[0];
             cmb_inc_head.SelectedIndex = 0;
+            loadGridData();
+        }
+
+        private void loadGridData()
+        {
+            var ds = common.getDataSet(@"SELECT P.NAME 'Property',P.ADDRESS 'Address',I.NAME 'Income Head' 
+            FROM PROPERTIES P,INC_EXP_HEADS I WHERE P.INC_HEAD = I.ID");
+
+            dg_prop_dtls.DataSource = ds.Tables[0];
+            
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -43,6 +53,7 @@ namespace Madrasah_Management_System
             if (retVal == common.SUCCESS_MSG)
             {
                 MessageBox.Show("Record Saved Successfully");
+                loadGridData();
             }
             else
             {

@@ -54,14 +54,14 @@
             this.groupBox1.Controls.Add(this.txt_name);
             this.groupBox1.Location = new System.Drawing.Point(27, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(383, 142);
+            this.groupBox1.Size = new System.Drawing.Size(399, 158);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Income/Exp Details";
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(124, 103);
+            this.btn_reset.Location = new System.Drawing.Point(124, 120);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(75, 23);
             this.btn_reset.TabIndex = 4;
@@ -120,7 +120,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(222, 103);
+            this.btn_save.Location = new System.Drawing.Point(222, 120);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 5;
@@ -140,10 +140,10 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 171);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 211);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(383, 300);
+            this.dataGridView1.Size = new System.Drawing.Size(399, 260);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.TabStop = false;
             // 
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 483);
+            this.ClientSize = new System.Drawing.Size(471, 483);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -22,12 +22,13 @@ namespace Madrasah_Management_System
         private void ExpenseMaster_Load(object sender, EventArgs e)
         {
             loadData();
-            
+
         }
 
-        private void loadData() {
+        private void loadData()
+        {
 
-            DataSet ds = common.getDataSet("SELECT ID,Name,TYPE Type,GL_CODE 'GL Code'FROM INC_EXP_HEADS");
+            DataSet ds = common.getDataSet("SELECT ID,Name,TYPE Type,GL_CODE 'GL Code' FROM INC_EXP_HEADS");
             dataGridView1.DataSource = ds.Tables[0];
             dataGridView1.Columns["ID"].Visible = false;
             dataGridView1.Columns["NAME"].Width = 150;
@@ -45,22 +46,26 @@ namespace Madrasah_Management_System
             txt_name.Enabled = false;
             cmb_type.Enabled = false;
         }
-       
+
         private void btn_save_Click(object sender, EventArgs e)
         {
             string name = txt_name.Text.Trim();
             string type = cmb_type.Text;
+            
             string glcode = txt_gl_code.Text;
-            if (name == string.Empty) {
+            if (name == string.Empty)
+            {
                 MessageBox.Show("Please Enter a Name");
                 return;
             }
             string selCmd = "SELECT * FROM INC_EXP_HEADS WHERE NAME='" + txt_name.Text.Trim() + "'";
-            if (isEdit == true) { 
-                selCmd += " AND ID != "+dataRowEdited["ID"].ToString();       
-            }       
+            if (isEdit == true)
+            {
+                selCmd += " AND ID != " + dataRowEdited["ID"].ToString();
+            }
             DataSet ds = common.getDataSet(selCmd);
-            if (ds.Tables[0].Rows.Count > 0) {
+            if (ds.Tables[0].Rows.Count > 0)
+            {
                 MessageBox.Show("Name already Exists, Select a different name");
                 return;
             }
@@ -70,7 +75,8 @@ namespace Madrasah_Management_System
                 dmlCmd = string.Format(@"INSERT INTO INC_EXP_HEADS(NAME,TYPE,GL_CODE) 
             VALUES('{0}','{1}','{2}')", name, type, glcode);
             }
-            else {
+            else
+            {
                 dmlCmd = string.Format(@"UPDATE INC_EXP_HEADS SET GL_CODE = '{0}'
                 WHERE ID={1}", glcode, dataRowEdited["ID"].ToString());
             }
@@ -80,7 +86,8 @@ namespace Madrasah_Management_System
                 MessageBox.Show("Record Saved Successfully");
                 loadData();
             }
-            else {
+            else
+            {
                 MessageBox.Show(retVal);
             }
         }
@@ -94,5 +101,7 @@ namespace Madrasah_Management_System
             cmb_type.Enabled = true;
             cmb_type.SelectedIndex = 0;
         }
+
+        
     }
 }
