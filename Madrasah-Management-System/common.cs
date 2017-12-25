@@ -32,8 +32,8 @@ namespace Madrasah_Management_System
         {
             SqlConnection sqlconn =null;
             SqlTransaction st =null;
-            SqlDataAdapter sql_da = null;
             SqlCommand sql_cmd = null;
+           
             try
             {
 
@@ -58,6 +58,44 @@ namespace Madrasah_Management_System
                 return ex.Message;
             }
             finally {
+                if (sqlconn != null && sqlconn.State == ConnectionState.Open)
+                {
+                    sqlconn.Close();
+                }
+            }
+        }
+
+        public static string updateTable(string cmd,out string id_value)
+        {
+            SqlConnection sqlconn = null;
+            SqlTransaction st = null;
+            SqlCommand sql_cmd = null;
+            id_value = "0";
+            try
+            {
+
+                string connstr = ConfigurationSettings.AppSettings["Connection_String"];
+                sqlconn = new SqlConnection(connstr);
+                sqlconn.Open();
+                st = sqlconn.BeginTransaction();
+                sql_cmd = new SqlCommand(cmd + ";SELECT SCOPE_IDENTITY()");
+                sql_cmd.Transaction = st;
+                sql_cmd.Connection = sqlconn;
+                id_value = sql_cmd.ExecuteScalar().ToString();
+                st.Commit();
+                return SUCCESS_MSG;
+            }
+            catch (Exception ex)
+            {
+                if (sqlconn != null && sqlconn.State == ConnectionState.Open)
+                {
+                    st.Rollback();
+                    sqlconn.Close();
+                }
+                return ex.Message;
+            }
+            finally
+            {
                 if (sqlconn != null && sqlconn.State == ConnectionState.Open)
                 {
                     sqlconn.Close();

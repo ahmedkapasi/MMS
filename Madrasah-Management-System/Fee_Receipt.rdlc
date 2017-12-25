@@ -221,7 +221,7 @@
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>3.78904cm</Top>
+            <Top>3.75729cm</Top>
             <Left>2.72755cm</Left>
             <Height>0.53573cm</Height>
             <Width>7.1829cm</Width>
@@ -352,20 +352,6 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Top>0.21131cm</Top>
-        <Left>0.10583cm</Left>
-        <Height>8.02986cm</Height>
-        <Width>10.16445cm</Width>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Rectangle>
-      <Rectangle Name="Rectangle4">
-        <ReportItems>
           <Textbox Name="Textbox4">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -373,7 +359,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Signature :</Value>
+                    <Value>Sign and Stamp</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -381,10 +367,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>0.32638cm</Top>
-            <Left>0.09441cm</Left>
+            <Top>8.41825cm</Top>
+            <Left>0.25812cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.11685cm</Width>
+            <Width>3.28102cm</Width>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -395,13 +382,24 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Line Name="Line2">
+            <Top>7.92211cm</Top>
+            <Left>0.01587cm</Left>
+            <Height>0cm</Height>
+            <Width>10.1327cm</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>8.41756cm</Top>
-        <Left>3.93551cm</Left>
-        <Height>1.21742cm</Height>
-        <Width>6.22978cm</Width>
-        <ZIndex>1</ZIndex>
+        <Top>0.21131cm</Top>
+        <Left>0.10583cm</Left>
+        <Height>9.49423cm</Height>
+        <Width>10.16445cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -409,7 +407,7 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>10.8312cm</Height>
+    <Height>10.09037cm</Height>
     <Style />
   </Body>
   <Width>10.64537cm</Width>

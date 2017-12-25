@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace Madrasah_Management_System
         public Income_Exp_Trans()
         {
             InitializeComponent();
+            //printDocument("13");
+            //return;
         }
 
         DataRow studentDtls;
@@ -38,6 +41,7 @@ namespace Madrasah_Management_System
         private void Income_Exp_Trans_Load(object sender, EventArgs e)
         {
             cmb_type.SelectedIndex = 0;
+            cmb_pay_method.SelectedIndex = 0;
         }
         private void fillIncExpHeads()
         {
@@ -93,28 +97,85 @@ namespace Madrasah_Management_System
             }
 
             string incExpHd = cmb_heads.SelectedValue.ToString();
-            string description = lbl_rcvd_from.Text + " " + txt_desc.Text.Trim();
+            string description = txt_desc.Text.Trim();
             string rcvdDate = dp_rcvd_dt.Value.ToString("yyyy-MMMM-dd");
             string amount = txt_amount.Text;
+            string pay_method = cmb_pay_method.Text;
             string studentID = "0";
             if (studentDtls != null)
             {
                 studentID = studentDtls["id"].ToString();
             }
-            string insrtCmd = string.Format(@"INSERT INTO INC_EXP_TRANS(DESCRIPTION,INC_EXP_HEAD,AMOUNT,TRANS_DATE,STUDENT)
-            VALUES('{0}',{1},{2},'{3}',{4})", description, incExpHd, amount, rcvdDate,studentID);
-            string retVal = common.updateTable(insrtCmd);
-
-            
+            string insrtCmd = string.Format(@"INSERT INTO INC_EXP_TRANS(DESCRIPTION,INC_EXP_HEAD,AMOUNT,TRANS_DATE,STUDENT,PAY_METHOD)
+            VALUES('{0}',{1},{2},'{3}',{4},'{5}')", description, incExpHd, amount, rcvdDate, studentID, pay_method);
+            string id_value;
+            string retVal = common.updateTable(insrtCmd, out id_value);
 
             if (retVal == common.SUCCESS_MSG)
             {
-                MessageBox.Show("Record Saved Successfully");
+                DialogResult dlg = MessageBox.Show("Record Saved Successfully, Do you want to print it now?", "Record Saved", MessageBoxButtons.YesNo);
+                if (dlg == DialogResult.Yes)
+                {
+                    printDocument(id_value);
+                }
             }
             else
             {
                 MessageBox.Show(retVal);
             }
+
+
+        }
+
+        private void printDocument(string id_value)
+        {
+            var dt = common.getDataSet(@"SELECT TR.*,FORMAT(TR.TRANS_DATE,'dd-MMM-yyyy') TR_DATE,EX.NAME,EX.TYPE FROM INC_EXP_TRANS TR,INC_EXP_HEADS EX WHERE TR.INC_EXP_HEAD=EX.ID 
+            AND TR.ID = " + id_value).Tables[0];
+            if (dt.Rows.Count <= 0)
+            {
+                return;
+            }
+            DataRow dr = dt.Rows[0];
+            string desc = dr["description"].ToString();
+            string amount = dr["amount"].ToString();
+            string period = dr["tr_date"].ToString();
+            string pay_method = dr["pay_method"].ToString();
+            string type = dr["type"].ToString();
+            string inc_exp_name = dr["name"].ToString();
+            string trans_details = "";
+            string rcpt_no = "Receipt No. " + id_value.PadLeft(5, '0');
+            if (type == "Income")
+            {
+                period = "Received On " + period;
+                desc = "Received From " + desc;
+                trans_details = "Received ";
+            }
+            else
+            {
+                period = "Paid On " + period;
+                desc = "Paid To " + desc;
+                trans_details = "Paid ";
+
+            }
+
+            Dictionary<string, object> frmParams = new Dictionary<string, object>();
+            Dictionary<string, string> rptParams = new Dictionary<string, string>();
+            
+            string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
+            string rptSubHeading = ConfigurationManager.AppSettings["Jamaat_Name"].ToString();
+            trans_details += string.Format("an amount of {0} as {1} by {2}", amount,
+               inc_exp_name,pay_method);
+            rptParams.Add("Period", period);
+            rptParams.Add("Name", desc);
+            rptParams.Add("trans_details", trans_details);
+            rptParams.Add("Report_Heading", rptHeading);
+            rptParams.Add("Report_Sub_Heading", rptSubHeading);
+            rptParams.Add("rcpt_no", rcpt_no);
+            frmParams.Add("reportParams", rptParams);
+            frmParams.Add("reportName", "inc_exp_voucher.rdlc");
+            Form objForm = new Report_Viewer(frmParams);
+            common.showForm(objForm);
+
         }
     }
 }

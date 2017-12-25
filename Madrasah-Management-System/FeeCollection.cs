@@ -145,7 +145,7 @@ namespace Madrasah_Management_System
             if (returnVal == common.SUCCESS_MSG)
             {
                 DialogResult dlg = MessageBox.Show("Record Saved Successfully. Do you want to print Fees Receipt now?", "Saved Successfully", MessageBoxButtons.YesNo);
-                if (dlg == System.Windows.Forms.DialogResult.Yes)
+                if (dlg == DialogResult.Yes)
                 {
                     showFeesReceipt();
                 }

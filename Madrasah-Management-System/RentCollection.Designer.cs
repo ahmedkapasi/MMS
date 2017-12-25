@@ -44,6 +44,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dg_rent_dtls = new System.Windows.Forms.DataGridView();
             this.btn_save = new System.Windows.Forms.Button();
+            this.dp_recvd_on = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmb_pay_method = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_rent_dtls)).BeginInit();
@@ -104,17 +108,21 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmb_pay_method);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.dp_recvd_on);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txt_tot_rent);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dp_to);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txt_mnth_rent);
             this.groupBox1.Controls.Add(this.dp_from);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt_mnth_rent);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(24, 183);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 86);
+            this.groupBox1.Size = new System.Drawing.Size(451, 116);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rent Details";
@@ -125,6 +133,7 @@
             this.dp_to.Name = "dp_to";
             this.dp_to.Size = new System.Drawing.Size(122, 20);
             this.dp_to.TabIndex = 3;
+            this.dp_to.ValueChanged += new System.EventHandler(this.dp_to_ValueChanged);
             // 
             // label4
             // 
@@ -140,7 +149,7 @@
             // 
             this.dp_from.Location = new System.Drawing.Point(100, 21);
             this.dp_from.Name = "dp_from";
-            this.dp_from.Size = new System.Drawing.Size(122, 20);
+            this.dp_from.Size = new System.Drawing.Size(120, 20);
             this.dp_from.TabIndex = 2;
             // 
             // label2
@@ -156,7 +165,7 @@
             // txt_mnth_rent
             // 
             this.txt_mnth_rent.Enabled = false;
-            this.txt_mnth_rent.Location = new System.Drawing.Point(100, 50);
+            this.txt_mnth_rent.Location = new System.Drawing.Point(102, 77);
             this.txt_mnth_rent.Name = "txt_mnth_rent";
             this.txt_mnth_rent.Size = new System.Drawing.Size(120, 20);
             this.txt_mnth_rent.TabIndex = 10;
@@ -165,7 +174,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 53);
+            this.label3.Location = new System.Drawing.Point(18, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 5;
@@ -174,7 +183,7 @@
             // txt_tot_rent
             // 
             this.txt_tot_rent.Enabled = false;
-            this.txt_tot_rent.Location = new System.Drawing.Point(299, 50);
+            this.txt_tot_rent.Location = new System.Drawing.Point(301, 77);
             this.txt_tot_rent.Name = "txt_tot_rent";
             this.txt_tot_rent.Size = new System.Drawing.Size(120, 20);
             this.txt_tot_rent.TabIndex = 16;
@@ -183,7 +192,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(223, 53);
+            this.label6.Location = new System.Drawing.Point(225, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 15;
@@ -202,19 +211,58 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(196, 284);
+            this.btn_save.Location = new System.Drawing.Point(196, 305);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(118, 24);
-            this.btn_save.TabIndex = 4;
+            this.btn_save.TabIndex = 5;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // dp_recvd_on
+            // 
+            this.dp_recvd_on.Location = new System.Drawing.Point(100, 48);
+            this.dp_recvd_on.Name = "dp_recvd_on";
+            this.dp_recvd_on.Size = new System.Drawing.Size(120, 20);
+            this.dp_recvd_on.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(26, 51);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Recvd. On";
+            // 
+            // cmb_pay_method
+            // 
+            this.cmb_pay_method.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_pay_method.FormattingEnabled = true;
+            this.cmb_pay_method.Items.AddRange(new object[] {
+            "Cash",
+            "Cheque"});
+            this.cmb_pay_method.Location = new System.Drawing.Point(299, 49);
+            this.cmb_pay_method.Name = "cmb_pay_method";
+            this.cmb_pay_method.Size = new System.Drawing.Size(122, 21);
+            this.cmb_pay_method.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(224, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Pay Method";
             // 
             // RentCollection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 500);
+            this.ClientSize = new System.Drawing.Size(498, 500);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.dg_rent_dtls);
             this.Controls.Add(this.groupBox1);
@@ -249,5 +297,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dg_rent_dtls;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.DateTimePicker dp_recvd_on;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmb_pay_method;
+        private System.Windows.Forms.Label label9;
     }
 }

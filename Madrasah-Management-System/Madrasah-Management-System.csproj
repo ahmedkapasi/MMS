@@ -139,6 +139,12 @@
     <Compile Include="Tenant_Registration.Designer.cs">
       <DependentUpon>Tenant_Registration.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Rent_Receipt.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inc_Exp_Voucher.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExpenseMaster.resx">
       <DependentUpon>ExpenseMaster.cs</DependentUpon>
     </EmbeddedResource>

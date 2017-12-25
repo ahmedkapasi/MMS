@@ -42,12 +42,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_srch_student = new System.Windows.Forms.Button();
+            this.cmb_pay_method = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmb_pay_method);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txt_desc);
             this.groupBox1.Controls.Add(this.lbl_rcvd_from);
             this.groupBox1.Controls.Add(this.dp_rcvd_dt);
@@ -56,7 +60,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(25, 169);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 128);
+            this.groupBox1.Size = new System.Drawing.Size(363, 130);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inc/Exp Details";
@@ -66,7 +70,7 @@
             this.txt_desc.Location = new System.Drawing.Point(98, 27);
             this.txt_desc.Name = "txt_desc";
             this.txt_desc.Size = new System.Drawing.Size(234, 20);
-            this.txt_desc.TabIndex = 14;
+            this.txt_desc.TabIndex = 3;
             // 
             // lbl_rcvd_from
             // 
@@ -83,7 +87,7 @@
             this.dp_rcvd_dt.Location = new System.Drawing.Point(98, 56);
             this.dp_rcvd_dt.Name = "dp_rcvd_dt";
             this.dp_rcvd_dt.Size = new System.Drawing.Size(234, 20);
-            this.dp_rcvd_dt.TabIndex = 12;
+            this.dp_rcvd_dt.TabIndex = 4;
             // 
             // lbl_rcvd_dt
             // 
@@ -97,17 +101,17 @@
             // 
             // txt_amount
             // 
-            this.txt_amount.Location = new System.Drawing.Point(98, 86);
+            this.txt_amount.Location = new System.Drawing.Point(242, 84);
             this.txt_amount.Name = "txt_amount";
-            this.txt_amount.Size = new System.Drawing.Size(234, 20);
-            this.txt_amount.TabIndex = 10;
+            this.txt_amount.Size = new System.Drawing.Size(90, 20);
+            this.txt_amount.TabIndex = 6;
             this.txt_amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForNumbers);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 89);
+            this.label3.Location = new System.Drawing.Point(189, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 5;
@@ -134,7 +138,7 @@
             this.cmb_heads.Location = new System.Drawing.Point(98, 61);
             this.cmb_heads.Name = "cmb_heads";
             this.cmb_heads.Size = new System.Drawing.Size(234, 21);
-            this.cmb_heads.TabIndex = 14;
+            this.cmb_heads.TabIndex = 2;
             this.cmb_heads.ValueMember = "id";
             // 
             // label5
@@ -153,12 +157,12 @@
             this.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_type.FormattingEnabled = true;
             this.cmb_type.Items.AddRange(new object[] {
-            "Income",
-            "Expense"});
+            "Expense",
+            "Income"});
             this.cmb_type.Location = new System.Drawing.Point(98, 24);
             this.cmb_type.Name = "cmb_type";
             this.cmb_type.Size = new System.Drawing.Size(234, 21);
-            this.cmb_type.TabIndex = 12;
+            this.cmb_type.TabIndex = 2;
             this.cmb_type.ValueMember = "id";
             this.cmb_type.SelectedIndexChanged += new System.EventHandler(this.cmb_type_SelectedIndexChanged);
             // 
@@ -174,10 +178,10 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(150, 309);
+            this.btn_save.Location = new System.Drawing.Point(150, 315);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 23);
-            this.btn_save.TabIndex = 16;
+            this.btn_save.Size = new System.Drawing.Size(95, 24);
+            this.btn_save.TabIndex = 7;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -187,16 +191,38 @@
             this.btn_srch_student.Location = new System.Drawing.Point(25, 12);
             this.btn_srch_student.Name = "btn_srch_student";
             this.btn_srch_student.Size = new System.Drawing.Size(363, 23);
-            this.btn_srch_student.TabIndex = 17;
+            this.btn_srch_student.TabIndex = 1;
             this.btn_srch_student.Text = "Search Student";
             this.btn_srch_student.UseVisualStyleBackColor = true;
             this.btn_srch_student.Click += new System.EventHandler(this.btn_srch_student_Click);
+            // 
+            // cmb_pay_method
+            // 
+            this.cmb_pay_method.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_pay_method.FormattingEnabled = true;
+            this.cmb_pay_method.Items.AddRange(new object[] {
+            "Cash",
+            "Cheque"});
+            this.cmb_pay_method.Location = new System.Drawing.Point(98, 84);
+            this.cmb_pay_method.Name = "cmb_pay_method";
+            this.cmb_pay_method.Size = new System.Drawing.Size(83, 21);
+            this.cmb_pay_method.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(14, 87);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Pay Method";
             // 
             // Income_Exp_Trans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 350);
+            this.ClientSize = new System.Drawing.Size(420, 356);
             this.Controls.Add(this.btn_srch_student);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.groupBox1);
@@ -228,5 +254,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_srch_student;
+        private System.Windows.Forms.ComboBox cmb_pay_method;
+        private System.Windows.Forms.Label label9;
     }
 }
