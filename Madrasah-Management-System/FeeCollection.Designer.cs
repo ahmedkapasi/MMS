@@ -175,6 +175,7 @@
             // 
             // dp_from_month
             // 
+            this.dp_from_month.CustomFormat = "MMMM yyyy";
             this.dp_from_month.Location = new System.Drawing.Point(84, 35);
             this.dp_from_month.Name = "dp_from_month";
             this.dp_from_month.Size = new System.Drawing.Size(131, 20);
@@ -259,7 +260,7 @@
             // 
             // dp_to_month
             // 
-            this.dp_to_month.CustomFormat = "";
+            this.dp_to_month.CustomFormat = "MMMM yyyy";
             this.dp_to_month.Location = new System.Drawing.Point(307, 40);
             this.dp_to_month.Name = "dp_to_month";
             this.dp_to_month.Size = new System.Drawing.Size(130, 20);

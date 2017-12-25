@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using System.Globalization;
 namespace Madrasah_Management_System
 {
     public partial class FeeCollection : Form
@@ -39,6 +40,9 @@ namespace Madrasah_Management_System
                 _studentID = studentRow["id"].ToString();
                 _feesAmount = studentRow["fees"].ToString();
                 cmb_pay_method.SelectedIndex = 0;
+                dp_from_month.Value = DateTime.ParseExact(DateTime.Now.ToString("01/MMM/yyyy"),"dd/MMM/yyyy",CultureInfo.InvariantCulture);
+                dp_to_month.Value = DateTime.ParseExact(DateTime.Now.AddMonths(1).ToString("01/MMM/yyyy"), "dd/MMM/yyyy", CultureInfo.InvariantCulture);
+                dp_to_month.Value = dp_to_month.Value.AddDays(-1); //last day of the month
                 //var incTypes = common.getDataSet("SELECT ID,NAME 'Fees Type','0.00' Amount FROM INC_EXP_HEADS WHERE TYPE='Income' AND SUB_TYPE=1");
                 //exp_heads_grid.DataSource = incTypes.Tables[0];
                 //exp_heads_grid.Columns[0].Visible = false;
@@ -93,10 +97,29 @@ namespace Madrasah_Management_System
             //    MessageBox.Show("Please Enter Valid Amount for Fees");
             //    return;
             //}
-            //if (calculateFees() == false)
-            //{
-            //    return;
-            //}
+            dp_from_month.Value = DateTime.ParseExact(dp_from_month.Value.ToString("01/MMM/yyyy"), "dd/MMM/yyyy", CultureInfo.InvariantCulture);
+            dp_to_month.Value = DateTime.ParseExact(dp_to_month.Value.AddMonths(1).ToString("01/MMM/yyyy"), "dd/MMM/yyyy", CultureInfo.InvariantCulture);
+            dp_to_month.Value = dp_to_month.Value.AddDays(-1); //last day of the month
+            if (txt_stu_name.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Please Select a Student First.");
+                button2.Focus();
+                return;
+            }
+            if (dp_from_month.Value > dp_to_month.Value)
+            {
+                MessageBox.Show("From Date should be less than To Date");
+                return;
+            }
+            if (calculateFees() == false)
+            {
+                return;
+            }
+            if (txt_fees.Text.Trim() == string.Empty || float.Parse(txt_fees.Text.Trim()) <= 0) {
+                MessageBox.Show("Invalid Fees Amount");
+                txt_fees.Focus();
+                return;
+            }
             string from_month = dp_from_month.Value.ToString("dd-MMM-yyyy");
             string to_month = dp_to_month.Value.ToString("dd-MMM-yyyy");
             string pay_method = cmb_pay_method.Text;
@@ -137,18 +160,22 @@ namespace Madrasah_Management_System
         {
             Dictionary<string, object> frmParams = new Dictionary<string, object>();
             Dictionary<string, string> rptParams = new Dictionary<string, string>();
-            string period = "For Month " + dp_from_month.Value.ToString("MMMM-yyyy");
+            string period = "Paid For " + dp_from_month.Value.ToString("MMM-yyyy") + " To " + dp_to_month.Value.ToString("MMM-yyyy");
             string mhr_no = studentRow["mhr_no"].ToString();
             string name = studentRow["name"].ToString();
             string standard = studentRow["standard"].ToString();
+            string fees_amount = txt_fees.Text;
             string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
-            string fees_details = string.Format("Received an amount of {0} on {1} by {2}", 0,
+            string rptSubHeading = ConfigurationManager.AppSettings["Jamaat_Name"].ToString();
+            string fees_details = string.Format("Received an amount of {0} on {1} by {2}", fees_amount,
                 DateTime.Now.ToString("dd-MMM-yyyy"), cmb_pay_method.Text);
             rptParams.Add("Period", period);
             rptParams.Add("MHR_No", mhr_no);
             rptParams.Add("Name", name);
             rptParams.Add("Fees_details", fees_details);
             rptParams.Add("Report_Heading", rptHeading);
+            rptParams.Add("Report_Sub_Heading", rptSubHeading);
+
             rptParams.Add("Standard", standard);
             frmParams.Add("reportParams", rptParams);
             frmParams.Add("reportName", "fee_receipt.rdlc");
@@ -176,13 +203,16 @@ namespace Madrasah_Management_System
         }
 
         bool calculateFees()
-        {
-            if (dp_from_month.Value > dp_to_month.Value)
+        {   
+            if (studentRow == null)
             {
-                MessageBox.Show("From Date should be less than To Date");
                 return false;
             }
-            long month_count = common.DateDiff(common.DateInterval.Month, dp_from_month.Value, dp_to_month.Value);
+            if (dp_from_month.Value > dp_to_month.Value) {
+                return false;
+            }
+            //DateTime from_date = dp_from_month.Value.AddMonths(1);
+            long month_count = common.DateDiff(common.DateInterval.Month, dp_from_month.Value, dp_to_month.Value)+1;
             txt_fees.Text = _feesAmount  = (float.Parse(studentRow["fees"].ToString()) * month_count).ToString();
 
             //foreach (DataGridViewRow gr in exp_heads_grid.Rows) { 

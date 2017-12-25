@@ -23,7 +23,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>3.31935cm</Top>
+            <Top>4.58935cm</Top>
             <Left>0.25812cm</Left>
             <Height>0.54709cm</Height>
             <Width>1.91792cm</Width>
@@ -55,7 +55,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>MHR_No</rd:DefaultName>
-            <Top>3.31935cm</Top>
+            <Top>4.58935cm</Top>
             <Left>2.28188cm</Left>
             <Height>0.60001cm</Height>
             <Width>2.12958cm</Width>
@@ -89,7 +89,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>3.31935cm</Top>
+            <Top>4.58935cm</Top>
             <Left>4.66722cm</Left>
             <Height>0.54709cm</Height>
             <Width>1.46813cm</Width>
@@ -122,7 +122,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Standard</rd:DefaultName>
-            <Top>3.29191cm</Top>
+            <Top>4.56191cm</Top>
             <Left>6.24824cm</Left>
             <Height>0.6cm</Height>
             <Width>3.06621cm</Width>
@@ -155,7 +155,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Fees_details</rd:DefaultName>
-            <Top>4.12743cm</Top>
+            <Top>5.39743cm</Top>
             <Left>0.25812cm</Left>
             <Height>1.36729cm</Height>
             <Width>9.46183cm</Width>
@@ -189,7 +189,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>2.48122cm</Top>
+            <Top>3.75122cm</Top>
             <Left>0.09525cm</Left>
             <Height>0.57355cm</Height>
             <Width>2.6323cm</Width>
@@ -221,7 +221,7 @@
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>2.51904cm</Top>
+            <Top>3.78904cm</Top>
             <Left>2.72755cm</Left>
             <Height>0.53573cm</Height>
             <Width>7.1829cm</Width>
@@ -256,7 +256,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Period</rd:DefaultName>
-            <Top>1.29921cm</Top>
+            <Top>2.25171cm</Top>
             <Left>0.16287cm</Left>
             <Height>0.70583cm</Height>
             <Width>9.74758cm</Width>
@@ -307,7 +307,7 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>2.286cm</Top>
+            <Top>3.2385cm</Top>
             <Height>0cm</Height>
             <Width>10.1327cm</Width>
             <ZIndex>9</ZIndex>
@@ -317,11 +317,46 @@
               </Border>
             </Style>
           </Line>
+          <Textbox Name="jamaat_name">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!Report_Sub_Heading.Value</Value>
+                    <Style>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>jamaat_name</rd:DefaultName>
+            <Top>1.17044cm</Top>
+            <Left>0.09525cm</Left>
+            <Height>0.81167cm</Height>
+            <Width>9.8152cm</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
         <Top>0.21131cm</Top>
         <Left>0.10583cm</Left>
-        <Height>5.78895cm</Height>
+        <Height>8.02986cm</Height>
         <Width>10.16445cm</Width>
         <Style>
           <Border>
@@ -362,8 +397,8 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>6.24798cm</Top>
-        <Left>4.02992cm</Left>
+        <Top>8.41756cm</Top>
+        <Left>3.93551cm</Left>
         <Height>1.21742cm</Height>
         <Width>6.22978cm</Width>
         <ZIndex>1</ZIndex>
@@ -374,7 +409,7 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>9.5612cm</Height>
+    <Height>10.8312cm</Height>
     <Style />
   </Body>
   <Width>10.64537cm</Width>
@@ -411,6 +446,10 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Standard">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Sub_Heading">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
