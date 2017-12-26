@@ -143,18 +143,20 @@ namespace Madrasah_Management_System
             string type = dr["type"].ToString();
             string inc_exp_name = dr["name"].ToString();
             string trans_details = "";
-            string rcpt_no = "Receipt No. " + id_value.PadLeft(5, '0');
+            string rcpt_no = "";
             if (type == "Income")
             {
                 period = "Received On " + period;
                 desc = "Received From " + desc;
                 trans_details = "Received ";
+                rcpt_no = "Receipt No.: " + id_value.PadLeft(5, '0');
             }
             else
             {
                 period = "Paid On " + period;
                 desc = "Paid To " + desc;
                 trans_details = "Paid ";
+                rcpt_no = "Voucher No.: " + id_value.PadLeft(5, '0');
 
             }
 

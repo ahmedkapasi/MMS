@@ -39,7 +39,7 @@ namespace Madrasah_Management_System
         }
         private void fillStandardsCombo()
         {
-            DataSet ds = common.getDataSet("SELECT * FROM STANDARDS");
+            DataSet ds = common.getDataSet("SELECT * FROM STANDARDS ORDER BY SEQUENCE");
             cmb_standard.DataSource = ds.Tables[0];
             cmb_gender.SelectedIndex = 0;
         }

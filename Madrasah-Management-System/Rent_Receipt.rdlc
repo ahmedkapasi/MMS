@@ -167,21 +167,12 @@
                 </TextRuns>
                 <Style />
               </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>:</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
             <Top>6.68055cm</Top>
             <Left>0.13112cm</Left>
-            <Height>0.6cm</Height>
-            <Width>3.33393cm</Width>
+            <Height>0.75875cm</Height>
+            <Width>3.24083cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>

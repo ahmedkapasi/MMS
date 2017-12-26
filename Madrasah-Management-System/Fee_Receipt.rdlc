@@ -157,7 +157,7 @@
             <rd:DefaultName>Fees_details</rd:DefaultName>
             <Top>5.39743cm</Top>
             <Left>0.25812cm</Left>
-            <Height>1.36729cm</Height>
+            <Height>2.10812cm</Height>
             <Width>9.46183cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -258,7 +258,7 @@
             <rd:DefaultName>Period</rd:DefaultName>
             <Top>2.25171cm</Top>
             <Left>0.16287cm</Left>
-            <Height>0.70583cm</Height>
+            <Height>0.61058cm</Height>
             <Width>9.74758cm</Width>
             <ZIndex>7</ZIndex>
             <Style>

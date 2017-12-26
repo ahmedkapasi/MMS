@@ -96,5 +96,10 @@ namespace Madrasah_Management_System
         {
             common.showForm(new Property_Registration());
         }
+
+        private void feesStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            common.showForm(new Rpt_Fees_Status());
+        }
     }
 }

@@ -44,6 +44,7 @@
             this.propertyRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rentReceiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feesStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +97,8 @@
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.iToolStripMenuItem,
-            this.expenseToolStripMenuItem});
+            this.expenseToolStripMenuItem,
+            this.feesStatusToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -174,6 +176,13 @@
             this.rentReceiptToolStripMenuItem.Text = "Rent Receipt";
             this.rentReceiptToolStripMenuItem.Click += new System.EventHandler(this.rentReceiptToolStripMenuItem_Click);
             // 
+            // feesStatusToolStripMenuItem
+            // 
+            this.feesStatusToolStripMenuItem.Name = "feesStatusToolStripMenuItem";
+            this.feesStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.feesStatusToolStripMenuItem.Text = "Fees Status";
+            this.feesStatusToolStripMenuItem.Click += new System.EventHandler(this.feesStatusToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem propertyRegistrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem studentRegistrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rentReceiptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem feesStatusToolStripMenuItem;
     }
 }
 

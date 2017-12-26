@@ -18,8 +18,8 @@ namespace Madrasah_Management_System
         public RentCollection()
         {
             InitializeComponent();
-            printDocument("2");
-            return;
+            //printDocument("2");
+            //return;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -80,9 +80,9 @@ namespace Madrasah_Management_System
             string period = string.Format("Rent For {0} To {1}",dr["Rent From"].ToString(),dr["Rent To"].ToString());
             string pay_method = dr["pay_method"].ToString();
             string trans_details = "";
-            string todays_date = "Received On :" + dr["Recvd On"].ToString();
+            string todays_date = "Received On: " + dr["Recvd On"].ToString();
             string amount = dr["Amount"].ToString();
-            string rcpt_no = "Receipt No. " + id_value.PadLeft(5, '0');
+            string rcpt_no = "Receipt No.: " + id_value.PadLeft(5, '0');
             
 
             Dictionary<string, object> frmParams = new Dictionary<string, object>();
