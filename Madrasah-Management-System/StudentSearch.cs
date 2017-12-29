@@ -50,28 +50,29 @@ namespace Madrasah_Management_System
                 int rowIndx = dataGridView1.HitTest(e.X, e.Y).RowIndex;
                 if (rowIndx == -1) { return; }
                 _selectedRowIndx = rowIndx;
-                
+
                 dataGridView1.ClearSelection();
                 dataGridView1.Rows[rowIndx].Selected = true;
                 contextMenuStrip1.Show(dataGridView1, e.X, e.Y);
             }
         }
 
-        
+
 
         void showStudentForm(int formType)
         {
-            
+
             Form fc;
             DataRow dr = getSelectedRow();
             if (formType == 1)
             {
                 fc = new Student_Registration(dr);
             }
-            else {
+            else
+            {
                 fc = new FeeCollection(dr);
             }
-            
+
             fc.MdiParent = this.MdiParent;
             fc.Show();
         }
@@ -79,14 +80,7 @@ namespace Madrasah_Management_System
         private DataRow getSelectedRow()
         {
             DataRow dr;
-            if (dataGridView1.DataSource.GetType() == typeof(DataView))
-            {
-                dr = (dataGridView1.DataSource as DataView).ToTable().Rows[_selectedRowIndx];
-            }
-            else
-            {
-                dr = (dataGridView1.DataSource as DataTable).Rows[_selectedRowIndx];
-            }
+            dr = (dataGridView1.DataSource as DataTable).Rows[_selectedRowIndx];
             return dr;
         }
 
@@ -113,7 +107,7 @@ namespace Madrasah_Management_System
             }
 
             student_ds.Tables[0].DefaultView.RowFilter = rowFilter;
-            dataGridView1.DataSource = student_ds.Tables[0].DefaultView;
+            dataGridView1.DataSource = student_ds.Tables[0].DefaultView.ToTable();
 
         }
 

@@ -27,7 +27,7 @@ namespace Madrasah_Management_System
 
         private void loadGridData()
         {
-            var ds = common.getDataSet(@"SELECT P.NAME 'stu_name',P.ADDRESS 'Address',I.NAME 'Income Head' 
+            var ds = common.getDataSet(@"SELECT P.NAME 'Property',P.ADDRESS 'Address',I.NAME 'Income Head' 
             FROM PROPERTIES P,INC_EXP_HEADS I WHERE P.INC_HEAD = I.ID");
 
             dg_prop_dtls.DataSource = ds.Tables[0];
@@ -38,7 +38,7 @@ namespace Madrasah_Management_System
         {
             if (txt_name.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Please Enter stu_name Name");
+                MessageBox.Show("Please Enter Property Name");
                 txt_name.Focus();
                 return;
             }

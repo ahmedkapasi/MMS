@@ -56,7 +56,7 @@ namespace Madrasah_Management_System
                if (dlg == DialogResult.Yes) {
                    printDocument(id_value);
                }
-                loadGridData();
+               loadGridData();
             }
             else
             {

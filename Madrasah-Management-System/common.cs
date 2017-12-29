@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
+using System.Globalization;
 namespace Madrasah_Management_System
 {
     public class common
@@ -30,10 +31,10 @@ namespace Madrasah_Management_System
         }
         public static string updateTable(string cmd)
         {
-            SqlConnection sqlconn =null;
-            SqlTransaction st =null;
+            SqlConnection sqlconn = null;
+            SqlTransaction st = null;
             SqlCommand sql_cmd = null;
-           
+
             try
             {
 
@@ -57,7 +58,8 @@ namespace Madrasah_Management_System
                 }
                 return ex.Message;
             }
-            finally {
+            finally
+            {
                 if (sqlconn != null && sqlconn.State == ConnectionState.Open)
                 {
                     sqlconn.Close();
@@ -65,7 +67,7 @@ namespace Madrasah_Management_System
             }
         }
 
-        public static string updateTable(string cmd,out string id_value)
+        public static string updateTable(string cmd, out string id_value)
         {
             SqlConnection sqlconn = null;
             SqlTransaction st = null;
@@ -109,8 +111,12 @@ namespace Madrasah_Management_System
             {
                 if (form.GetType() == f.GetType())
                 {
-                    f.Show();
-                    return;
+                    if (form.GetType() != typeof(Report_Viewer))
+                    {
+                        f.Show();
+                        return;
+                    }
+
                 }
             }
             form.MdiParent = MainForm.ActiveForm;
@@ -126,28 +132,30 @@ namespace Madrasah_Management_System
             Hour,
             Minute,
             Second
-        } 
+        }
 
-        public static long DateDiff(DateInterval interval, DateTime date1, DateTime date2) { 
+        public static long DateDiff(DateInterval interval, DateTime date1, DateTime date2)
+        {
 
-            TimeSpan ts = date2 - date1; 
+            TimeSpan ts = date2 - date1;
 
-            switch (interval) { 
-                case DateInterval.Year: 
-                    return date2.Year - date1.Year; 
-                case DateInterval.Month: 
-                    return (date2.Month - date1.Month) + (12 * (date2.Year - date1.Year)); 
-                case DateInterval.Weekday: 
-                    return Fix(ts.TotalDays) / 7; 
-                case DateInterval.Day: 
-                    return Fix(ts.TotalDays); 
-                case DateInterval.Hour: 
-                    return Fix(ts.TotalHours); 
-                case DateInterval.Minute: 
-                    return Fix(ts.TotalMinutes); 
-                default: 
-                    return Fix(ts.TotalSeconds); 
-            } 
+            switch (interval)
+            {
+                case DateInterval.Year:
+                    return date2.Year - date1.Year;
+                case DateInterval.Month:
+                    return (date2.Month - date1.Month) + (12 * (date2.Year - date1.Year));
+                case DateInterval.Weekday:
+                    return Fix(ts.TotalDays) / 7;
+                case DateInterval.Day:
+                    return Fix(ts.TotalDays);
+                case DateInterval.Hour:
+                    return Fix(ts.TotalHours);
+                case DateInterval.Minute:
+                    return Fix(ts.TotalMinutes);
+                default:
+                    return Fix(ts.TotalSeconds);
+            }
         }
 
         private static long Fix(double Number)
@@ -157,7 +165,12 @@ namespace Madrasah_Management_System
                 return (long)Math.Floor(Number);
             }
             return (long)Math.Ceiling(Number);
-        } 
+        }
+        public static DateTime parseDate(string date){
 
+            DateTime retDate = DateTime.ParseExact(date, "dd-MMM-yyyy", CultureInfo.InvariantCulture);
+            return retDate;
+        }
+        
     }
 }

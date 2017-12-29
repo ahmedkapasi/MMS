@@ -61,7 +61,7 @@
             this.btn_save.Location = new System.Drawing.Point(215, 368);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(110, 23);
-            this.btn_save.TabIndex = 9;
+            this.btn_save.TabIndex = 6;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);

@@ -15,6 +15,9 @@ namespace Madrasah_Management_System
         public Student_Registration()
         {
             InitializeComponent();
+            fillStandardsCombo();
+            cmb_gender.SelectedIndex = 0;
+            cmb_standard.SelectedIndex = 0;
 
         }
         bool isEdit = false;
@@ -32,7 +35,7 @@ namespace Madrasah_Management_System
                 txt_its_id.Text = dr["its_id"].ToString();
                 txt_phone_no.Text = dr["phone_no"].ToString();
                 txt_dob_hijri.Text = dr["dob_hijri"].ToString();
-                cmb_standard.SelectedValue = int.Parse(dr["standard"].ToString());
+                cmb_standard.SelectedValue = dr["standard"].ToString();
                 cmb_gender.SelectedIndex = dr["gender"].ToString() == "Male" ? 0 : 1;
                 dp_dob.Value = dr["dob"].ToString() == string.Empty ? DateTime.Now : DateTime.Parse(dr["dob"].ToString());
             }
@@ -46,9 +49,7 @@ namespace Madrasah_Management_System
         private void Student_Registration_Load(object sender, EventArgs e)
         {
 
-            fillStandardsCombo();
-            cmb_gender.SelectedIndex = 0;
-            cmb_standard.SelectedIndex = 0;
+            
         }
 
         private void btn_save_Click(object sender, EventArgs e)

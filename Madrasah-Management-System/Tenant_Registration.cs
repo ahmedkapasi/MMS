@@ -43,6 +43,7 @@ namespace Madrasah_Management_System
             if (retVal == common.SUCCESS_MSG)
             {
                 MessageBox.Show("Record Saved Successfully");
+                loadGridData();
             }
             else {
                 MessageBox.Show(retVal);

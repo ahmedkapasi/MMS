@@ -25,9 +25,16 @@ namespace Madrasah_Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            common.isLoggedIn = true;
-            this.MdiParent.MainMenuStrip.Enabled = true;
-            this.Close();
+            if (txt_password.Text == "admin@1" && txt_user.Text.ToLower() == "admin")
+            {
+                common.isLoggedIn = true;
+                this.MdiParent.MainMenuStrip.Enabled = true;
+                this.Close();
+            }
+            else {
+                MessageBox.Show("Invalid Credentials");
+            }
+            
         }
     }
 }

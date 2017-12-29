@@ -50,6 +50,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(25, 133);
             this.dataGridView1.Name = "dataGridView1";
@@ -143,7 +145,7 @@
             this.copyNameToolStripMenuItem,
             this.newIncExpEntryToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 92);
             // 
             // edit_record
             // 

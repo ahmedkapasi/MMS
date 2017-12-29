@@ -89,10 +89,16 @@ namespace Madrasah_Management_System
                 MessageBox.Show("Please Enter " + lbl_rcvd_from.Text);
                 return;
             }
-
-            if (txt_amount.Text.Trim() == string.Empty || float.Parse(txt_amount.Text) <= 0)
+            float amt;
+            if (float.TryParse(txt_amount.Text, out amt) == false) {
+                MessageBox.Show("Invalid Amount");
+                txt_amount.Focus();
+                return;
+            }
+            if (float.Parse(txt_amount.Text) <= 0)
             {
                 MessageBox.Show("Invalid Amount");
+                txt_amount.Focus();
                 return;
             }
 

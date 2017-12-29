@@ -39,7 +39,9 @@ namespace Madrasah_Management_System
         private void btn_show_Click(object sender, EventArgs e)
         {
             string from_month = "01-JUNE-"+cmb_year.SelectedValue.ToString();
-            string to_month = "31-MAY-"+(int.Parse(cmb_year.SelectedValue.ToString())+1).ToString();
+             string year = cmb_year.SelectedValue.ToString();
+            string next_year = (int.Parse(cmb_year.SelectedValue.ToString())+1).ToString();
+            string to_month = "31-MAY-"+(next_year).ToString();
             string standard = cmb_standard.SelectedValue.ToString() == "0" ? "1=1" : "ST.STANDARD = "+cmb_standard.SelectedValue.ToString();
             string selCmd = string.Format(@"SELECT MAX(ST.NAME) STU_NAME,MAX(ST.MHR_NO) MHR_NO,MAX(ST.ITS_ID) ITS_ID,
             FORMAT(MIN(FD.FEES_FROM),'dd-MMM-yyyy') 'FROM',MAX(SD.NAME) STANDARD ,FORMAT(MAX(FD.FEES_TO),'dd-MMM-yyyy') 'TO', 
@@ -57,24 +59,45 @@ namespace Madrasah_Management_System
             }
             addMonthCols(dt_fees,months);
             foreach (DataRow dr in dt_fees.Rows) {
-                DateTime dt_from =  DateTime.ParseExact(dr["from"].ToString(),"dd-MMM-yyyy",CultureInfo.InvariantCulture);
-                DateTime dt_to = DateTime.ParseExact(dr["to"].ToString(), "dd-MMM-yyyy", CultureInfo.InvariantCulture);
-                //int mnt_from = dt_from.Month;
-                //int mnt_to = dt_to.Month;
-                //for (int i = mnt_from; i <= mnt_to; i++) {
-                //    string mnt_name = months[i];
-                //    dr[mnt_name] = "Paid";
-                //}
+                DateTime dt_from =  common.parseDate(dr["from"].ToString());
+                DateTime dt_to = common.parseDate(dr["to"].ToString());
+                
                 while (dt_from <= dt_to) {
                     int mnth = dt_from.Month;
                     string mnt_name = months[mnth];
                    dr[mnt_name] = dr["monthly_fees"];
                    dt_from = dt_from.AddMonths(1);
                 }
+                if (chk_defaulters.Checked) {
+                   
+                    DateTime till_dt = DateTime.Now.AddMonths(-1);
+                    DateTime to_dt = common.parseDate("31-May-" + next_year);
+                    DateTime from_dt = common.parseDate("01-Jun-" + year);
+                    if (till_dt > to_dt) { // if current date is greater than academic year
+                        till_dt = to_dt;
+                    }
+
+                    while (from_dt <= till_dt)
+                    {
+                        int mnth = from_dt.Month;
+                        string mnt_name = months[mnth];
+                        if (dr[mnt_name].ToString() == "") {
+                            dr["isDefaulter"] = "1";
+                        }
+                        from_dt = from_dt.AddMonths(1);
+                    }
+                }
+            }
+
+            if (chk_defaulters.Checked) { 
+                //string year = cmb_year.SelectedValue.ToString();
+                //DateTime from_dt = common.parseDate("01-Jun-" + year);
+                dt_fees.DefaultView.RowFilter = "isDefaulter = '1'";
+                dt_fees = dt_fees.DefaultView.ToTable();
             }
             Dictionary<string, object> frmParams = new Dictionary<string, object>();
             Dictionary<string, string> rptParams = new Dictionary<string, string>();
-            string period = "For Academic Year " + cmb_year.SelectedValue.ToString() + " - " + (int.Parse(cmb_year.SelectedValue.ToString()) + 1).ToString();
+            string period = "For Academic Year " + year + " - " + next_year;
            
             string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
             string rptSubHeading = ConfigurationManager.AppSettings["Jamaat_Name"].ToString();
@@ -94,7 +117,7 @@ namespace Madrasah_Management_System
 
         private void addMonthCols(DataTable dt, Dictionary<int, string> months)
         {
-            DateTime from = DateTime.ParseExact("01-Jun-2017","dd-MMM-yyyy",CultureInfo.InvariantCulture);
+            DateTime from = common.parseDate("01-Jun-2017");
 
             for (int i = 1; i <= 12; i++) {
                 string month_name = from.ToString("MMM");
@@ -103,6 +126,7 @@ namespace Madrasah_Management_System
                 dt.Columns.Add(month_name);
                 from = from.AddMonths(1);
             }
+            dt.Columns.Add("isDefaulter");
         }
     }
 }

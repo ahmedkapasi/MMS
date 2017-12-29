@@ -55,7 +55,7 @@
             this.groupBox1.Size = new System.Drawing.Size(411, 174);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "stu_name Details";
+            this.groupBox1.Text = "Property Details";
             // 
             // cmb_inc_head
             // 
@@ -82,7 +82,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 13);
             this.label3.TabIndex = 20;
-            this.label3.Text = "stu_name Address";
+            this.label3.Text = "Property Address";
             // 
             // btn_save
             // 
@@ -116,11 +116,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 22);
+            this.label1.Location = new System.Drawing.Point(43, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "stu_name Name";
+            this.label1.Text = "Property Name";
             // 
             // txt_name
             // 
@@ -150,7 +150,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Property_Registration";
-            this.Text = "stu_name Registration";
+            this.Text = "Property Registration";
             this.Load += new System.EventHandler(this.Property_Registration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
