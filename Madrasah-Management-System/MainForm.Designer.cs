@@ -33,9 +33,9 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.leasePropertyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rentReceiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.expenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feesStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,8 +43,7 @@
             this.tenantRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propertyRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rentReceiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.feesStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rePrintReceiptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,30 +89,31 @@
             // 
             this.leasePropertyToolStripMenuItem.Name = "leasePropertyToolStripMenuItem";
             this.leasePropertyToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.leasePropertyToolStripMenuItem.Text = "Lease stu_name";
+            this.leasePropertyToolStripMenuItem.Text = "Lease Property";
             this.leasePropertyToolStripMenuItem.Click += new System.EventHandler(this.leasePropertyToolStripMenuItem_Click);
+            // 
+            // rentReceiptToolStripMenuItem
+            // 
+            this.rentReceiptToolStripMenuItem.Name = "rentReceiptToolStripMenuItem";
+            this.rentReceiptToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.rentReceiptToolStripMenuItem.Text = "Rent Receipt";
+            this.rentReceiptToolStripMenuItem.Click += new System.EventHandler(this.rentReceiptToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iToolStripMenuItem,
-            this.expenseToolStripMenuItem,
-            this.feesStatusToolStripMenuItem});
+            this.feesStatusToolStripMenuItem,
+            this.rePrintReceiptsToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
             // 
-            // iToolStripMenuItem
+            // feesStatusToolStripMenuItem
             // 
-            this.iToolStripMenuItem.Name = "iToolStripMenuItem";
-            this.iToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.iToolStripMenuItem.Text = "Date-wise Income";
-            // 
-            // expenseToolStripMenuItem
-            // 
-            this.expenseToolStripMenuItem.Name = "expenseToolStripMenuItem";
-            this.expenseToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.expenseToolStripMenuItem.Text = "Date-wise Expense";
+            this.feesStatusToolStripMenuItem.Name = "feesStatusToolStripMenuItem";
+            this.feesStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.feesStatusToolStripMenuItem.Text = "Fees Status";
+            this.feesStatusToolStripMenuItem.Click += new System.EventHandler(this.feesStatusToolStripMenuItem_Click);
             // 
             // searchToolStripMenuItem
             // 
@@ -159,7 +159,7 @@
             // 
             this.propertyRegistrationToolStripMenuItem.Name = "propertyRegistrationToolStripMenuItem";
             this.propertyRegistrationToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.propertyRegistrationToolStripMenuItem.Text = "stu_name Registration";
+            this.propertyRegistrationToolStripMenuItem.Text = "Property Registration";
             this.propertyRegistrationToolStripMenuItem.Click += new System.EventHandler(this.propertyRegistrationToolStripMenuItem_Click_1);
             // 
             // studentRegistrationToolStripMenuItem
@@ -169,19 +169,12 @@
             this.studentRegistrationToolStripMenuItem.Text = "Student Registration";
             this.studentRegistrationToolStripMenuItem.Click += new System.EventHandler(this.studentRegistrationToolStripMenuItem_Click_1);
             // 
-            // rentReceiptToolStripMenuItem
+            // rePrintReceiptsToolStripMenuItem
             // 
-            this.rentReceiptToolStripMenuItem.Name = "rentReceiptToolStripMenuItem";
-            this.rentReceiptToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.rentReceiptToolStripMenuItem.Text = "Rent Receipt";
-            this.rentReceiptToolStripMenuItem.Click += new System.EventHandler(this.rentReceiptToolStripMenuItem_Click);
-            // 
-            // feesStatusToolStripMenuItem
-            // 
-            this.feesStatusToolStripMenuItem.Name = "feesStatusToolStripMenuItem";
-            this.feesStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.feesStatusToolStripMenuItem.Text = "Fees Status";
-            this.feesStatusToolStripMenuItem.Click += new System.EventHandler(this.feesStatusToolStripMenuItem_Click);
+            this.rePrintReceiptsToolStripMenuItem.Name = "rePrintReceiptsToolStripMenuItem";
+            this.rePrintReceiptsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.rePrintReceiptsToolStripMenuItem.Text = "Re-Print Receipts";
+            this.rePrintReceiptsToolStripMenuItem.Click += new System.EventHandler(this.rePrintReceiptsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -206,8 +199,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem iToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem expenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem studentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
@@ -221,6 +212,7 @@
         private System.Windows.Forms.ToolStripMenuItem studentRegistrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rentReceiptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem feesStatusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rePrintReceiptsToolStripMenuItem;
     }
 }
 

@@ -101,5 +101,10 @@ namespace Madrasah_Management_System
         {
             common.showForm(new Rpt_Fees_Status());
         }
+
+        private void rePrintReceiptsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            common.showForm(new Print_Receipts());
+        }
     }
 }

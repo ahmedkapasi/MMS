@@ -64,7 +64,7 @@
             this.groupBox2.Size = new System.Drawing.Size(451, 132);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "stu_name Details";
+            this.groupBox2.Text = "Property Details";
             // 
             // cmb_properties
             // 
@@ -100,11 +100,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 42);
+            this.label1.Location = new System.Drawing.Point(35, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "stu_name";
+            this.label1.Text = "Property";
             // 
             // groupBox1
             // 

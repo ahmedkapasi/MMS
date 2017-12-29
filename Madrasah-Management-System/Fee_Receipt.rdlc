@@ -23,7 +23,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>4.58935cm</Top>
+            <Top>4.7481cm</Top>
             <Left>0.25812cm</Left>
             <Height>0.54709cm</Height>
             <Width>1.91792cm</Width>
@@ -55,7 +55,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>MHR_No</rd:DefaultName>
-            <Top>4.58935cm</Top>
+            <Top>4.7481cm</Top>
             <Left>2.28188cm</Left>
             <Height>0.60001cm</Height>
             <Width>2.12958cm</Width>
@@ -89,7 +89,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>4.58935cm</Top>
+            <Top>4.7481cm</Top>
             <Left>4.66722cm</Left>
             <Height>0.54709cm</Height>
             <Width>1.46813cm</Width>
@@ -122,7 +122,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Standard</rd:DefaultName>
-            <Top>4.56191cm</Top>
+            <Top>4.72066cm</Top>
             <Left>6.24824cm</Left>
             <Height>0.6cm</Height>
             <Width>3.06621cm</Width>
@@ -155,7 +155,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Fees_details</rd:DefaultName>
-            <Top>5.39743cm</Top>
+            <Top>5.55618cm</Top>
             <Left>0.25812cm</Left>
             <Height>2.10812cm</Height>
             <Width>9.46183cm</Width>
@@ -189,7 +189,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>3.75122cm</Top>
+            <Top>3.90997cm</Top>
             <Left>0.09525cm</Left>
             <Height>0.57355cm</Height>
             <Width>2.6323cm</Width>
@@ -221,7 +221,7 @@
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <Top>3.75729cm</Top>
+            <Top>3.91604cm</Top>
             <Left>2.72755cm</Left>
             <Height>0.53573cm</Height>
             <Width>7.1829cm</Width>
@@ -307,7 +307,7 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>3.2385cm</Top>
+            <Top>3.1115cm</Top>
             <Height>0cm</Height>
             <Width>10.1327cm</Width>
             <ZIndex>9</ZIndex>
@@ -394,6 +394,41 @@
               </Border>
             </Style>
           </Line>
+          <Textbox Name="Rcpt_No">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!Rcpt_No.Value</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Rcpt_No</rd:DefaultName>
+            <Top>3.27802cm</Top>
+            <Left>4.336cm</Left>
+            <Height>0.50271cm</Height>
+            <Width>5.57445cm</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
         <Top>0.21131cm</Top>
@@ -448,6 +483,10 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="Report_Sub_Heading">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Rcpt_No">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

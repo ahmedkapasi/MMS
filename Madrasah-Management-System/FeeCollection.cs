@@ -86,7 +86,7 @@ namespace Madrasah_Management_System
 
         private void FeeCollection_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 
@@ -145,13 +145,14 @@ namespace Madrasah_Management_System
             }
             insertCmd = string.Format(@"INSERT INTO FEES_DETAILS(STUDENT,FEES_FROM,FEES_TO,PAYMENT_METHOD,INC_EXP_HEAD,TOTAL_AMT,TOTAL_PAID,MONTHLY_FEES,COMMENTS,RECVD_ON) 
             VALUES({0},'{1}','{2}','{3}',{4},{5},{6},{7},'{8}','{9}')", _studentID, from_month, to_month, pay_method, incm_type, _feesAmount, fees_paid,_monthlyFees, comments,recvd_on);
-            string returnVal = common.updateTable(insertCmd);
+            string id_value;
+            string returnVal = common.updateTable(insertCmd,out id_value);
             if (returnVal == common.SUCCESS_MSG)
             {
                 DialogResult dlg = MessageBox.Show("Record Saved Successfully. Do you want to print Fees Receipt now?", "Saved Successfully", MessageBoxButtons.YesNo);
                 if (dlg == DialogResult.Yes)
                 {
-                    showFeesReceipt();
+                    showFeesReceipt(id_value);
                 }
             }
             else
@@ -160,23 +161,31 @@ namespace Madrasah_Management_System
             }
         }
 
-        private void showFeesReceipt()
+        private void showFeesReceipt(string id_value)
         {
+            string selCmd = string.Format(@"SELECT ST.NAME,ST.MHR_NO,STD.NAME 'STANDARD',FORMAT(FEES_FROM,'{0}') 'FEES_FROM', 
+            FORMAT(FEES_TO,'{0}') 'FEES_TO',FORMAT(RECVD_ON,'dd-MMM-yyyy') 'RECVD_ON',TOTAL_PAID,PAYMENT_METHOD  
+            FROM FEES_DETAILS FD,STUDENTS ST,STANDARDS STD 
+            WHERE FD.ID ={1} AND FD.STUDENT = ST.ID AND STD.ID=ST.STANDARD","MMM-yyyy",id_value);
+            var dr = common.getDataSet(selCmd).Tables[0].Rows[0];
             Dictionary<string, object> frmParams = new Dictionary<string, object>();
             Dictionary<string, string> rptParams = new Dictionary<string, string>();
-            string period = "Paid For " + dp_from_month.Value.ToString("MMM-yyyy") + " To " + dp_to_month.Value.ToString("MMM-yyyy");
-            string mhr_no = studentRow["mhr_no"].ToString();
-            string name = studentRow["name"].ToString();
-            string standard = studentRow["standard"].ToString();
-            string fees_amount = txt_fees.Text;
+            string period = "Paid For " + dr["FEES_FROM"] +" To " + dr["FEES_TO"];
+            string mhr_no = dr["mhr_no"].ToString();
+            string name = dr["name"].ToString();
+            string standard = dr["standard"].ToString();
+            string fees_amount = dr["total_paid"].ToString();
+            string pay_method = dr["payment_method"].ToString();
+            string recvd_on = dr["recvd_on"].ToString();
             string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
             string rptSubHeading = ConfigurationManager.AppSettings["Jamaat_Name"].ToString();
-            string fees_details = string.Format("Received an amount of {0} on {1} by {2}", fees_amount,
-                dp_recvd_on.Value.ToString("dd-MMM-yyyy"), cmb_pay_method.Text);
+            string fees_details = string.Format("Received an amount of {0} on {1} by {2}", fees_amount,recvd_on, pay_method);
+            string rcpt_no = "Receipt No.: " + id_value.PadLeft(5, '0');
             rptParams.Add("Period", period);
             rptParams.Add("MHR_No", mhr_no);
             rptParams.Add("Name", name);
             rptParams.Add("Fees_details", fees_details);
+            rptParams.Add("Rcpt_No", rcpt_no);
             rptParams.Add("Report_Heading", rptHeading);
             rptParams.Add("Report_Sub_Heading", rptSubHeading);
 
