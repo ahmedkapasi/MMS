@@ -90,7 +90,7 @@
             // 
             this.leasePropertyToolStripMenuItem.Name = "leasePropertyToolStripMenuItem";
             this.leasePropertyToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.leasePropertyToolStripMenuItem.Text = "Lease Property";
+            this.leasePropertyToolStripMenuItem.Text = "Lease stu_name";
             this.leasePropertyToolStripMenuItem.Click += new System.EventHandler(this.leasePropertyToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
@@ -159,7 +159,7 @@
             // 
             this.propertyRegistrationToolStripMenuItem.Name = "propertyRegistrationToolStripMenuItem";
             this.propertyRegistrationToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.propertyRegistrationToolStripMenuItem.Text = "Property Registration";
+            this.propertyRegistrationToolStripMenuItem.Text = "stu_name Registration";
             this.propertyRegistrationToolStripMenuItem.Click += new System.EventHandler(this.propertyRegistrationToolStripMenuItem_Click_1);
             // 
             // studentRegistrationToolStripMenuItem

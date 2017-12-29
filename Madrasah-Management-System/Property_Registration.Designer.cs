@@ -31,11 +31,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_inc_head = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_save = new System.Windows.Forms.Button();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
-            this.btn_save = new System.Windows.Forms.Button();
             this.dg_prop_dtls = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_prop_dtls)).BeginInit();
@@ -55,7 +55,7 @@
             this.groupBox1.Size = new System.Drawing.Size(411, 174);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Property Details";
+            this.groupBox1.Text = "stu_name Details";
             // 
             // cmb_inc_head
             // 
@@ -82,7 +82,17 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 13);
             this.label3.TabIndex = 20;
-            this.label3.Text = "Property Address";
+            this.label3.Text = "stu_name Address";
+            // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(163, 135);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(99, 24);
+            this.btn_save.TabIndex = 4;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // txt_address
             // 
@@ -110,7 +120,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Property Name";
+            this.label1.Text = "stu_name Name";
             // 
             // txt_name
             // 
@@ -118,16 +128,6 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(231, 20);
             this.txt_name.TabIndex = 1;
-            // 
-            // btn_save
-            // 
-            this.btn_save.Location = new System.Drawing.Point(163, 135);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(99, 24);
-            this.btn_save.TabIndex = 4;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // dg_prop_dtls
             // 
@@ -147,8 +147,10 @@
             this.ClientSize = new System.Drawing.Size(456, 490);
             this.Controls.Add(this.dg_prop_dtls);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Property_Registration";
-            this.Text = "Property Registration";
+            this.Text = "stu_name Registration";
             this.Load += new System.EventHandler(this.Property_Registration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

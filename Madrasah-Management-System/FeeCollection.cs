@@ -21,6 +21,7 @@ namespace Madrasah_Management_System
         }
         private string _studentID;
         private string _feesAmount;
+        private string _monthlyFees;
         private DataSet _dsFeesData;
         private DataRow studentRow;
         private Form objForm;
@@ -38,7 +39,8 @@ namespace Madrasah_Management_System
                 //txt_mnth_fees.Text = studentRow["fees"].ToString();
                 txt_its_id.Text = studentRow["its_id"].ToString();
                 _studentID = studentRow["id"].ToString();
-                _feesAmount = studentRow["fees"].ToString();
+                _feesAmount = _monthlyFees = studentRow["fees"].ToString();
+                
                 cmb_pay_method.SelectedIndex = 0;
                 dp_from_month.Value = DateTime.ParseExact(DateTime.Now.ToString("01/MMM/yyyy"),"dd/MMM/yyyy",CultureInfo.InvariantCulture);
                 dp_to_month.Value = DateTime.ParseExact(DateTime.Now.AddMonths(1).ToString("01/MMM/yyyy"), "dd/MMM/yyyy", CultureInfo.InvariantCulture);
@@ -126,7 +128,9 @@ namespace Madrasah_Management_System
             string incm_type = "(SELECT ID FROM INC_EXP_HEADS WHERE SUB_TYPE = 1)";//cmb_inc_type.SelectedValue.ToString();
             string fees_paid = txt_fees.Text;
             string comments = txt_comments.Text.Trim();
+            string recvd_on = dp_recvd_on.Value.ToString("dd-MMM-yyyy");
             string insertCmd = "";
+           
             if (checkIfDuplicate() == true)
             {
                 DialogResult dlg = MessageBox.Show("Record already exists, do you still want to create a new record", "Record Exists", MessageBoxButtons.YesNo);
@@ -139,8 +143,8 @@ namespace Madrasah_Management_System
             {
                 comments = string.Format("Received amount {0} against income head {1}", fees_paid, "Monthly Fees");
             }
-            insertCmd = string.Format(@"INSERT INTO FEES_DETAILS(STUDENT,FEES_FROM,FEES_TO,PAYMENT_METHOD,INC_EXP_HEAD,FEES_AMT,FEES_PAID,COMMENTS) 
-            VALUES({0},'{1}','{2}','{3}',{4},{5},{6},'{7}')", _studentID, from_month, to_month, pay_method, incm_type, _feesAmount, fees_paid, comments);
+            insertCmd = string.Format(@"INSERT INTO FEES_DETAILS(STUDENT,FEES_FROM,FEES_TO,PAYMENT_METHOD,INC_EXP_HEAD,TOTAL_AMT,TOTAL_PAID,MONTHLY_FEES,COMMENTS,RECVD_ON) 
+            VALUES({0},'{1}','{2}','{3}',{4},{5},{6},{7},'{8}','{9}')", _studentID, from_month, to_month, pay_method, incm_type, _feesAmount, fees_paid,_monthlyFees, comments,recvd_on);
             string returnVal = common.updateTable(insertCmd);
             if (returnVal == common.SUCCESS_MSG)
             {
@@ -168,7 +172,7 @@ namespace Madrasah_Management_System
             string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
             string rptSubHeading = ConfigurationManager.AppSettings["Jamaat_Name"].ToString();
             string fees_details = string.Format("Received an amount of {0} on {1} by {2}", fees_amount,
-                DateTime.Now.ToString("dd-MMM-yyyy"), cmb_pay_method.Text);
+                dp_recvd_on.Value.ToString("dd-MMM-yyyy"), cmb_pay_method.Text);
             rptParams.Add("Period", period);
             rptParams.Add("MHR_No", mhr_no);
             rptParams.Add("Name", name);

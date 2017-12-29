@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmb_standard = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_show = new System.Windows.Forms.Button();
             this.cmb_year = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -40,7 +40,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cmb_year);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btn_show);
             this.groupBox2.Controls.Add(this.cmb_standard);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label2);
@@ -82,14 +82,15 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Standard";
             // 
-            // button1
+            // btn_show
             // 
-            this.button1.Location = new System.Drawing.Point(87, 113);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Show Report";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_show.Location = new System.Drawing.Point(87, 113);
+            this.btn_show.Name = "btn_show";
+            this.btn_show.Size = new System.Drawing.Size(115, 23);
+            this.btn_show.TabIndex = 25;
+            this.btn_show.Text = "Show Report";
+            this.btn_show.UseVisualStyleBackColor = true;
+            this.btn_show.Click += new System.EventHandler(this.btn_show_Click);
             // 
             // cmb_year
             // 
@@ -108,6 +109,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 184);
             this.Controls.Add(this.groupBox2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Rpt_Fees_Status";
             this.Text = "Fees Status";
             this.Load += new System.EventHandler(this.Rpt_Fees_Status_Load);
@@ -121,7 +124,7 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_show;
         private System.Windows.Forms.ComboBox cmb_standard;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmb_year;

@@ -44,7 +44,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_save = new System.Windows.Forms.Button();
+            this.dg_tenants = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_tenants)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -67,7 +69,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(429, 290);
+            this.groupBox1.Size = new System.Drawing.Size(448, 278);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tenant Details";
@@ -136,7 +138,7 @@
             // 
             // txt_phone_no
             // 
-            this.txt_phone_no.Location = new System.Drawing.Point(139, 38);
+            this.txt_phone_no.Location = new System.Drawing.Point(139, 39);
             this.txt_phone_no.Name = "txt_phone_no";
             this.txt_phone_no.Size = new System.Drawing.Size(277, 20);
             this.txt_phone_no.TabIndex = 2;
@@ -203,7 +205,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(159, 238);
+            this.btn_save.Location = new System.Drawing.Point(201, 236);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(119, 25);
             this.btn_save.TabIndex = 8;
@@ -211,17 +213,31 @@
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // dg_tenants
+            // 
+            this.dg_tenants.AllowUserToAddRows = false;
+            this.dg_tenants.AllowUserToDeleteRows = false;
+            this.dg_tenants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_tenants.Location = new System.Drawing.Point(12, 310);
+            this.dg_tenants.Name = "dg_tenants";
+            this.dg_tenants.Size = new System.Drawing.Size(448, 174);
+            this.dg_tenants.TabIndex = 3;
+            // 
             // Tenant_Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 334);
+            this.ClientSize = new System.Drawing.Size(476, 496);
+            this.Controls.Add(this.dg_tenants);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Tenant_Registration";
             this.Text = "Tenant Registration";
             this.Load += new System.EventHandler(this.Tenant_Registration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_tenants)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,5 +260,6 @@
         private System.Windows.Forms.TextBox txt_pan_no;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_address;
+        private System.Windows.Forms.DataGridView dg_tenants;
     }
 }

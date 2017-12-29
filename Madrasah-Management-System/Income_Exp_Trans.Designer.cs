@@ -227,6 +227,8 @@
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Income_Exp_Trans";
             this.Text = "New Income/Expense";
             this.Load += new System.EventHandler(this.Income_Exp_Trans_Load);

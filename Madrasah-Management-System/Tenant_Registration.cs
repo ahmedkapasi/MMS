@@ -53,6 +53,14 @@ namespace Madrasah_Management_System
         private void Tenant_Registration_Load(object sender, EventArgs e)
         {
             cmb_gender.SelectedIndex = 0;
+            loadGridData();
+        }
+
+        private void loadGridData()
+        {
+            var ds = common.getDataSet("SELECT Name,phone_no 'Phone',isnull(its_id,'') 'ITS ID' FROM TENANTS");
+            dg_tenants.DataSource = ds.Tables[0];
+            
         }
     }
 }

@@ -57,7 +57,7 @@ namespace Madrasah_Management_System
 
         private void loadGridData()
         {
-            string selCmd = @"SELECT PR.NAME 'Property',TN.NAME 'Tenant',FORMAT(LD.lease_start,'dd-MMM-yyyy') 'Lease From',FORMAT(LD.lease_end,'dd-MMM-yyyy') 'Lease To'
+            string selCmd = @"SELECT PR.NAME 'stu_name',TN.NAME 'Tenant',FORMAT(LD.lease_start,'dd-MMM-yyyy') 'Lease From',FORMAT(LD.lease_end,'dd-MMM-yyyy') 'Lease To'
                             FROM LEASE_DETAILS LD INNER JOIN 
                             PROPERTIES PR ON LD.PROPERTY = PR.ID 
                             INNER JOIN TENANTS TN ON TN.ID = LD.tenant";

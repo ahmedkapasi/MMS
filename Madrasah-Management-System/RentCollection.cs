@@ -37,6 +37,9 @@ namespace Madrasah_Management_System
                 return;
             }
             calculateTotalRent();
+            dp_from.Value = DateTime.ParseExact(dp_from.Value.ToString("01/MMM/yyyy"), "dd/MMM/yyyy", CultureInfo.InvariantCulture);
+            dp_to.Value = DateTime.ParseExact(dp_to.Value.AddMonths(1).ToString("01/MMM/yyyy"), "dd/MMM/yyyy", CultureInfo.InvariantCulture);
+            dp_to.Value = dp_to.Value.AddDays(-1); //last day of the month
             string property = cmb_properties.SelectedValue.ToString();
             string from_dt = dp_from.Value.ToString("yyyy-MMM-dd");
             string to_dt = dp_to.Value.ToString("yyyy-MMM-dd");
@@ -63,7 +66,7 @@ namespace Madrasah_Management_System
 
         private void printDocument(string id_value)
         {
-            var dt = common.getDataSet(@"SELECT PR.NAME 'Property',TN.NAME 'Tenant',RD.PAY_METHOD,
+            var dt = common.getDataSet(@"SELECT PR.NAME 'stu_name',TN.NAME 'Tenant',RD.PAY_METHOD,
             FORMAT(RD.RECVD_ON,'dd-MMM-yyyy') 'Recvd On',RD.AMOUNT,
             FORMAT(RD.RENT_FROM,'dd-MMM-yyyy') 'Rent From',FORMAT(RD.RENT_TO,'dd-MMM-yyyy') 'Rent To'
             FROM LEASE_DETAILS LD INNER JOIN 
@@ -75,7 +78,7 @@ namespace Madrasah_Management_System
                 return;
             }
             DataRow dr = dt.Rows[0];
-            string property = dr["Property"].ToString();
+            string property = dr["stu_name"].ToString();
             string tenant = dr["Tenant"].ToString();
             string period = string.Format("Rent For {0} To {1}",dr["Rent From"].ToString(),dr["Rent To"].ToString());
             string pay_method = dr["pay_method"].ToString();
@@ -130,7 +133,7 @@ namespace Madrasah_Management_System
 
         private void loadGridData()
         {
-            string selCmd = @"SELECT LD.ID,PR.NAME 'Property',TN.NAME 'Tenant',FORMAT(RD.RENT_FROM,'dd-MMM-yyyy') 'Rent From',FORMAT(RD.RENT_TO,'dd-MMM-yyyy') 'Rent To'
+            string selCmd = @"SELECT LD.ID,PR.NAME 'stu_name',TN.NAME 'Tenant',FORMAT(RD.RENT_FROM,'dd-MMM-yyyy') 'Rent From',FORMAT(RD.RENT_TO,'dd-MMM-yyyy') 'Rent To'
                             FROM LEASE_DETAILS LD INNER JOIN 
                             PROPERTIES PR ON LD.PROPERTY = PR.ID 
                             INNER JOIN tenants TN ON TN.ID = LD.TENANT

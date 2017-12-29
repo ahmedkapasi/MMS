@@ -18,7 +18,14 @@ namespace Madrasah_Management_System
         {
             InitializeComponent();
             LocalReport localReport = reportViewer1.LocalReport;
-            localReport.ReportPath = reportDtls["reportName"].ToString();
+
+            string reportName = reportDtls["reportName"].ToString();
+            if (reportName == "fees_status.rdlc") {
+                reportViewer1.Width = 1200;
+                this.Width = 1200;
+            }
+            localReport.ReportPath = reportName;
+            
             if (reportDtls.Keys.Contains("reportParams"))
             {
                 Dictionary<string, string> rptParams = reportDtls["reportParams"] as Dictionary<string, string>;
@@ -33,7 +40,8 @@ namespace Madrasah_Management_System
             if (reportDtls.Keys.Contains("reportDataSrc"))
             {
                 ReportDataSource rds = new ReportDataSource("reportDataSrc");
-                rds.Value = (reportDtls["reportDataSrc"] as DataSet).Tables[0];
+                rds.Value = (reportDtls["reportDataSrc"] as DataTable);
+                rds.Name = "DataSet1";
                 localReport.DataSources.Add(rds);
             }
             //else {

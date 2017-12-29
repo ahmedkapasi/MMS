@@ -50,6 +50,8 @@
             this.txt_comments = new System.Windows.Forms.TextBox();
             this.dp_to_month = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.dp_recvd_on = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -185,7 +187,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 115);
+            this.label7.Location = new System.Drawing.Point(242, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 13;
@@ -195,7 +197,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 74);
+            this.label9.Location = new System.Drawing.Point(9, 70);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 13);
             this.label9.TabIndex = 16;
@@ -208,13 +210,15 @@
             this.cmb_pay_method.Items.AddRange(new object[] {
             "Cash",
             "Cheque"});
-            this.cmb_pay_method.Location = new System.Drawing.Point(84, 71);
+            this.cmb_pay_method.Location = new System.Drawing.Point(84, 67);
             this.cmb_pay_method.Name = "cmb_pay_method";
             this.cmb_pay_method.Size = new System.Drawing.Size(131, 21);
             this.cmb_pay_method.TabIndex = 3;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dp_recvd_on);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_fees);
             this.groupBox1.Controls.Add(this.txt_comments);
@@ -236,7 +240,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(257, 77);
+            this.label3.Location = new System.Drawing.Point(257, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 20;
@@ -244,24 +248,26 @@
             // 
             // txt_fees
             // 
-            this.txt_fees.Location = new System.Drawing.Point(307, 74);
+            this.txt_fees.Enabled = false;
+            this.txt_fees.Location = new System.Drawing.Point(313, 67);
             this.txt_fees.Name = "txt_fees";
             this.txt_fees.Size = new System.Drawing.Size(130, 20);
             this.txt_fees.TabIndex = 19;
+            this.txt_fees.TabStop = false;
             this.txt_fees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkForNumbers);
             // 
             // txt_comments
             // 
-            this.txt_comments.Location = new System.Drawing.Point(86, 109);
+            this.txt_comments.Location = new System.Drawing.Point(313, 101);
             this.txt_comments.Multiline = true;
             this.txt_comments.Name = "txt_comments";
-            this.txt_comments.Size = new System.Drawing.Size(351, 34);
-            this.txt_comments.TabIndex = 4;
+            this.txt_comments.Size = new System.Drawing.Size(130, 45);
+            this.txt_comments.TabIndex = 5;
             // 
             // dp_to_month
             // 
             this.dp_to_month.CustomFormat = "MMMM yyyy";
-            this.dp_to_month.Location = new System.Drawing.Point(307, 40);
+            this.dp_to_month.Location = new System.Drawing.Point(313, 35);
             this.dp_to_month.Name = "dp_to_month";
             this.dp_to_month.Size = new System.Drawing.Size(130, 20);
             this.dp_to_month.TabIndex = 2;
@@ -271,11 +277,29 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(249, 41);
+            this.label6.Location = new System.Drawing.Point(253, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 18;
             this.label6.Text = "Fees To";
+            // 
+            // dp_recvd_on
+            // 
+            this.dp_recvd_on.CustomFormat = "MMMM yyyy";
+            this.dp_recvd_on.Location = new System.Drawing.Point(85, 101);
+            this.dp_recvd_on.Name = "dp_recvd_on";
+            this.dp_recvd_on.Size = new System.Drawing.Size(131, 20);
+            this.dp_recvd_on.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(11, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Recvd. On";
             // 
             // FeeCollection
             // 
@@ -324,5 +348,7 @@
         private System.Windows.Forms.TextBox txt_comments;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_fees;
+        private System.Windows.Forms.DateTimePicker dp_recvd_on;
+        private System.Windows.Forms.Label label10;
     }
 }
