@@ -42,14 +42,36 @@ namespace Madrasah_Management_System
              string year = cmb_year.SelectedValue.ToString();
             string next_year = (int.Parse(cmb_year.SelectedValue.ToString())+1).ToString();
             string to_month = "31-MAY-"+(next_year).ToString();
-            string standard = cmb_standard.SelectedValue.ToString() == "0" ? "1=1" : "ST.STANDARD = "+cmb_standard.SelectedValue.ToString();
-            string selCmd = string.Format(@"SELECT MAX(ST.NAME) STU_NAME,MAX(ST.MHR_NO) MHR_NO,MAX(ST.ITS_ID) ITS_ID,
-            FORMAT(MIN(FD.FEES_FROM),'dd-MMM-yyyy') 'FROM',MAX(SD.NAME) STANDARD ,FORMAT(MAX(FD.FEES_TO),'dd-MMM-yyyy') 'TO', 
-            MAX(FD.MONTHLY_FEES) MONTHLY_FEES  FROM STUDENTS ST 
+            string standard = cmb_standard.SelectedValue.ToString() == "0" ? "ST.STANDARD" : cmb_standard.SelectedValue.ToString();
+//            string selCmd = string.Format(@"SELECT MAX(ST.NAME) STU_NAME,MAX(ST.MHR_NO) MHR_NO,MAX(ST.ITS_ID) ITS_ID,
+//            FORMAT(MIN(FD.FEES_FROM),'dd-MMM-yyyy') 'FROM',MAX(SD.NAME) STANDARD ,FORMAT(MAX(FD.FEES_TO),'dd-MMM-yyyy') 'TO', 
+//            MAX(FD.MONTHLY_FEES) MONTHLY_FEES,MAX(SEQUENCE) SEQUENCE  FROM STUDENTS ST 
+//            LEFT OUTER JOIN FEES_DETAILS FD ON ST.ID = FD.STUDENT
+//            INNER JOIN STANDARDS SD ON SD.ID = ST.STANDARD
+//            WHERE FD.FEES_FROM >= '{0}' AND FD.FEES_TO <= '{1}' AND {2}
+//            GROUP BY FD.STUDENT ORDER BY SEQUENCE", from_month,to_month,standard);
+
+
+            string selCmd = string.Format(@"SELECT ID,MAX(STU_NAME) STU_NAME,MAX(MHR_NO) MHR_NO,MAX(ITS_ID) ITS_ID,
+            MAX(FROM_DT) 'FROM',MAX(STANDARD) STANDARD ,MAX(TO_DT) 'TO', 
+            MAX(MONTHLY_FEES) MONTHLY_FEES,MAX(SEQUENCE) SEQUENCE FROM (
+            SELECT ST.ID 'ID',ST.NAME STU_NAME,ST.MHR_NO,ST.ITS_ID,
+            FORMAT(FD.FEES_FROM,'dd-MMM-yyyy') 'FROM_DT',SD.NAME STANDARD ,
+			FORMAT(FD.FEES_TO,'dd-MMM-yyyy') 'TO_DT', 
+            FD.MONTHLY_FEES,SEQUENCE FROM STUDENTS ST 
             INNER JOIN FEES_DETAILS FD ON ST.ID = FD.STUDENT
             INNER JOIN STANDARDS SD ON SD.ID = ST.STANDARD
-            WHERE FD.FEES_FROM >= '{0}' AND FD.FEES_TO <= '{1}' AND {2}
-            GROUP BY FD.STUDENT", from_month,to_month,standard);
+            WHERE FD.FEES_FROM >= '{0}' AND FD.FEES_TO <= '{1}' AND ST.STANDARD = {2}
+            UNION
+            SELECT ST.ID 'ID',ST.NAME STU_NAME,ST.MHR_NO,ST.ITS_ID ITS_ID,
+            NULL 'FROM_DT',SD.NAME STANDARD ,NULL 'TO_DT', 
+            0 MONTHLY_FEES,SEQUENCE
+			FROM STUDENTS ST 
+            INNER JOIN STANDARDS SD ON ST.STANDARD = {2}
+			WHERE SD.ID = ST.STANDARD) A 
+            GROUP BY A.ID,A.STU_NAME ORDER BY SEQUENCE ASC", from_month, to_month, standard);
+
+
             Dictionary<int, string> months = new Dictionary<int, string>();
 
             var dt_fees = common.getDataSet(selCmd).Tables[0];
@@ -59,32 +81,44 @@ namespace Madrasah_Management_System
             }
             addMonthCols(dt_fees,months);
             foreach (DataRow dr in dt_fees.Rows) {
-                DateTime dt_from =  common.parseDate(dr["from"].ToString());
-                DateTime dt_to = common.parseDate(dr["to"].ToString());
-                
-                while (dt_from <= dt_to) {
-                    int mnth = dt_from.Month;
-                    string mnt_name = months[mnth];
-                   dr[mnt_name] = dr["monthly_fees"];
-                   dt_from = dt_from.AddMonths(1);
-                }
-                if (chk_defaulters.Checked) {
-                   
-                    DateTime till_dt = DateTime.Now.AddMonths(-1);
-                    DateTime to_dt = common.parseDate("31-May-" + next_year);
-                    DateTime from_dt = common.parseDate("01-Jun-" + year);
-                    if (till_dt > to_dt) { // if current date is greater than academic year
-                        till_dt = to_dt;
-                    }
+                if (dr["from"].ToString() == "" || dr["to"].ToString() == "")
+                {
+                    dr["isDefaulter"] = "1";
 
-                    while (from_dt <= till_dt)
+                }
+                else
+                {
+                    DateTime dt_from = common.parseDate(dr["from"].ToString());
+                    DateTime dt_to = common.parseDate(dr["to"].ToString());
+
+                    while (dt_from <= dt_to)
                     {
-                        int mnth = from_dt.Month;
+                        int mnth = dt_from.Month;
                         string mnt_name = months[mnth];
-                        if (dr[mnt_name].ToString() == "") {
-                            dr["isDefaulter"] = "1";
+                        dr[mnt_name] = dr["monthly_fees"];
+                        dt_from = dt_from.AddMonths(1);
+                    }
+                    if (chk_defaulters.Checked)
+                    {
+
+                        DateTime till_dt = DateTime.Now.AddMonths(-1);
+                        DateTime to_dt = common.parseDate("31-May-" + next_year);
+                        DateTime from_dt = common.parseDate("01-Jun-" + year);
+                        if (till_dt > to_dt)
+                        { // if current date is greater than academic year
+                            till_dt = to_dt;
                         }
-                        from_dt = from_dt.AddMonths(1);
+
+                        while (from_dt <= till_dt)
+                        {
+                            int mnth = from_dt.Month;
+                            string mnt_name = months[mnth];
+                            if (dr[mnt_name].ToString() == "")
+                            {
+                                dr["isDefaulter"] = "1";
+                            }
+                            from_dt = from_dt.AddMonths(1);
+                        }
                     }
                 }
             }
