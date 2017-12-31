@@ -122,7 +122,7 @@ namespace Madrasah_Management_System
                 DialogResult dlg = MessageBox.Show("Record Saved Successfully, Do you want to print it now?", "Record Saved", MessageBoxButtons.YesNo);
                 if (dlg == DialogResult.Yes)
                 {
-                    printDocument(id_value);
+                   Print_Documents.printIncExpReceipt(id_value);
                 }
             }
             else
@@ -133,57 +133,6 @@ namespace Madrasah_Management_System
 
         }
 
-        private void printDocument(string id_value)
-        {
-            var dt = common.getDataSet(@"SELECT TR.*,FORMAT(TR.TRANS_DATE,'dd-MMM-yyyy') TR_DATE,EX.NAME,EX.TYPE FROM INC_EXP_TRANS TR,INC_EXP_HEADS EX WHERE TR.INC_EXP_HEAD=EX.ID 
-            AND TR.ID = " + id_value).Tables[0];
-            if (dt.Rows.Count <= 0)
-            {
-                return;
-            }
-            DataRow dr = dt.Rows[0];
-            string desc = dr["description"].ToString();
-            string amount = dr["amount"].ToString();
-            string period = dr["tr_date"].ToString();
-            string pay_method = dr["pay_method"].ToString();
-            string type = dr["type"].ToString();
-            string inc_exp_name = dr["name"].ToString();
-            string trans_details = "";
-            string rcpt_no = "";
-            if (type == "Income")
-            {
-                period = "Received On " + period;
-                desc = "Received From " + desc;
-                trans_details = "Received ";
-                rcpt_no = "Receipt No.: " + id_value.PadLeft(5, '0');
-            }
-            else
-            {
-                period = "Paid On " + period;
-                desc = "Paid To " + desc;
-                trans_details = "Paid ";
-                rcpt_no = "Voucher No.: " + id_value.PadLeft(5, '0');
-
-            }
-
-            Dictionary<string, object> frmParams = new Dictionary<string, object>();
-            Dictionary<string, string> rptParams = new Dictionary<string, string>();
-            
-            string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
-            string rptSubHeading = ConfigurationManager.AppSettings["Jamaat_Name"].ToString();
-            trans_details += string.Format("an amount of {0} as {1} by {2}", amount,
-               inc_exp_name,pay_method);
-            rptParams.Add("Period", period);
-            rptParams.Add("Name", desc);
-            rptParams.Add("trans_details", trans_details);
-            rptParams.Add("Report_Heading", rptHeading);
-            rptParams.Add("Report_Sub_Heading", rptSubHeading);
-            rptParams.Add("rcpt_no", rcpt_no);
-            frmParams.Add("reportParams", rptParams);
-            frmParams.Add("reportName", "inc_exp_voucher.rdlc");
-            Form objForm = new Report_Viewer(frmParams);
-            common.showForm(objForm);
-
-        }
+        
     }
 }

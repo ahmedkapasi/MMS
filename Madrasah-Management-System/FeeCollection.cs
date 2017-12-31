@@ -152,7 +152,7 @@ namespace Madrasah_Management_System
                 DialogResult dlg = MessageBox.Show("Record Saved Successfully. Do you want to print Fees Receipt now?", "Saved Successfully", MessageBoxButtons.YesNo);
                 if (dlg == DialogResult.Yes)
                 {
-                    showFeesReceipt(id_value);
+                    Print_Documents.printFeesReceipt(id_value);
                 }
             }
             else
@@ -161,40 +161,7 @@ namespace Madrasah_Management_System
             }
         }
 
-        private void showFeesReceipt(string id_value)
-        {
-            string selCmd = string.Format(@"SELECT ST.NAME,ST.MHR_NO,STD.NAME 'STANDARD',FORMAT(FEES_FROM,'{0}') 'FEES_FROM', 
-            FORMAT(FEES_TO,'{0}') 'FEES_TO',FORMAT(RECVD_ON,'dd-MMM-yyyy') 'RECVD_ON',TOTAL_PAID,PAYMENT_METHOD  
-            FROM FEES_DETAILS FD,STUDENTS ST,STANDARDS STD 
-            WHERE FD.ID ={1} AND FD.STUDENT = ST.ID AND STD.ID=ST.STANDARD","MMM-yyyy",id_value);
-            var dr = common.getDataSet(selCmd).Tables[0].Rows[0];
-            Dictionary<string, object> frmParams = new Dictionary<string, object>();
-            Dictionary<string, string> rptParams = new Dictionary<string, string>();
-            string period = "Paid For " + dr["FEES_FROM"] +" To " + dr["FEES_TO"];
-            string mhr_no = dr["mhr_no"].ToString();
-            string name = dr["name"].ToString();
-            string standard = dr["standard"].ToString();
-            string fees_amount = dr["total_paid"].ToString();
-            string pay_method = dr["payment_method"].ToString();
-            string recvd_on = dr["recvd_on"].ToString();
-            string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
-            string rptSubHeading = ConfigurationManager.AppSettings["Jamaat_Name"].ToString();
-            string fees_details = string.Format("Received an amount of {0} on {1} by {2}", fees_amount,recvd_on, pay_method);
-            string rcpt_no = "Receipt No.: " + id_value.PadLeft(5, '0');
-            rptParams.Add("Period", period);
-            rptParams.Add("MHR_No", mhr_no);
-            rptParams.Add("Name", name);
-            rptParams.Add("Fees_details", fees_details);
-            rptParams.Add("Rcpt_No", rcpt_no);
-            rptParams.Add("Report_Heading", rptHeading);
-            rptParams.Add("Report_Sub_Heading", rptSubHeading);
-
-            rptParams.Add("Standard", standard);
-            frmParams.Add("reportParams", rptParams);
-            frmParams.Add("reportName", "fee_receipt.rdlc");
-            Form objForm = new Report_Viewer(frmParams);
-            common.showForm(objForm);
-        }
+        
 
         private bool checkIfDuplicate()
         {

@@ -54,7 +54,7 @@ namespace Madrasah_Management_System
             {
                var dlg = MessageBox.Show("Record Saved Successfully, Do you want to print receipt now ?","Record Saved",MessageBoxButtons.YesNo);
                if (dlg == DialogResult.Yes) {
-                   printDocument(id_value);
+                   Print_Documents.printFeesReceipt(id_value);
                }
                loadGridData();
             }
@@ -64,48 +64,7 @@ namespace Madrasah_Management_System
             }
         }
 
-        private void printDocument(string id_value)
-        {
-            var dt = common.getDataSet(@"SELECT PR.NAME 'stu_name',TN.NAME 'Tenant',RD.PAY_METHOD,
-            FORMAT(RD.RECVD_ON,'dd-MMM-yyyy') 'Recvd On',RD.AMOUNT,
-            FORMAT(RD.RENT_FROM,'dd-MMM-yyyy') 'Rent From',FORMAT(RD.RENT_TO,'dd-MMM-yyyy') 'Rent To'
-            FROM LEASE_DETAILS LD INNER JOIN 
-            PROPERTIES PR ON LD.PROPERTY = PR.ID 
-            INNER JOIN tenants TN ON TN.ID = LD.TENANT
-            INNER JOIN RENT_DETAILS RD ON RD.lease_id = LD.ID AND RD.ID =" + id_value).Tables[0];
-            if (dt.Rows.Count <= 0)
-            {
-                return;
-            }
-            DataRow dr = dt.Rows[0];
-            string property = dr["stu_name"].ToString();
-            string tenant = dr["Tenant"].ToString();
-            string period = string.Format("Rent For {0} To {1}",dr["Rent From"].ToString(),dr["Rent To"].ToString());
-            string pay_method = dr["pay_method"].ToString();
-            string trans_details = "";
-            string todays_date = "Received On: " + dr["Recvd On"].ToString();
-            string amount = dr["Amount"].ToString();
-            string rcpt_no = "Receipt No.: " + id_value.PadLeft(5, '0');
-            
-
-            Dictionary<string, object> frmParams = new Dictionary<string, object>();
-            Dictionary<string, string> rptParams = new Dictionary<string, string>();
-
-            string rptHeading = ConfigurationManager.AppSettings["Institute_Name"].ToString();
-            string rptSubHeading = ConfigurationManager.AppSettings["Jamaat_Name"].ToString();
-            trans_details += string.Format("Received an amount of {0} as Monthly Rent by {1} from {2} for Flat/Shop {3}", amount,
-                pay_method,tenant,property);
-            rptParams.Add("Period", period);
-            rptParams.Add("todays_date", todays_date);
-            rptParams.Add("trans_details", trans_details);
-            rptParams.Add("Report_Heading", rptHeading);
-            rptParams.Add("Report_Sub_Heading", rptSubHeading);
-            rptParams.Add("rcpt_no", rcpt_no);
-            frmParams.Add("reportParams", rptParams);
-            frmParams.Add("reportName", "Rent_Receipt.rdlc");
-            Form objForm = new Report_Viewer(frmParams);
-            common.showForm(objForm);
-        }
+        
 
         private void RentCollection_Load(object sender, EventArgs e)
         {
