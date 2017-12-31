@@ -20,19 +20,26 @@ namespace Madrasah_Management_System
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-            int rcpt = int.Parse(txt_rcpt_no.Text.ToString().Trim());
-            if (cmb_type.Text == "Rent")
-            {
-                Print_Documents.printRentReceipt(rcpt.ToString());
+            
+            int rcpt;
+            if (int.TryParse(txt_rcpt_no.Text.ToString().Trim(), out rcpt) == false) {
+                MessageBox.Show("Invalid Receipt No.");
+                return;
             }
-            else {
-                if (cmb_type.Text == "Fees") {
+            switch (cmb_type.Text.Trim())
+            {
+                case "Fees" :
                     Print_Documents.printFeesReceipt(rcpt.ToString());
-                }
+                    break;
+                case "Rent":
+                    Print_Documents.printRentReceipt(rcpt.ToString());
+                    break;
+                case "Inc/Exp":
+                    Print_Documents.printIncExpReceipt(rcpt.ToString());
+                    break;
+
             }
         }
-
-        
 
         private void Print_Receipts_Load(object sender, EventArgs e)
         {

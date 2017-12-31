@@ -20,6 +20,7 @@ namespace Madrasah_Management_System
             AND TR.ID = " + id_value).Tables[0];
             if (dt.Rows.Count <= 0)
             {
+                MessageBox.Show("No Records Found");
                 return;
             }
             DataRow dr = dt.Rows[0];

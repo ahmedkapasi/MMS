@@ -85,7 +85,8 @@
             this.cmb_type.FormattingEnabled = true;
             this.cmb_type.Items.AddRange(new object[] {
             "Fees",
-            "Rent"});
+            "Rent",
+            "Inc/Exp"});
             this.cmb_type.Location = new System.Drawing.Point(135, 31);
             this.cmb_type.Name = "cmb_type";
             this.cmb_type.Size = new System.Drawing.Size(167, 21);
