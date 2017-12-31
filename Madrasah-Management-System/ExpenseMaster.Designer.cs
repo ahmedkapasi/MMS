@@ -38,12 +38,16 @@
             this.btn_save = new System.Windows.Forms.Button();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chk_property = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chk_property);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btn_reset);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt_gl_code);
@@ -54,14 +58,14 @@
             this.groupBox1.Controls.Add(this.txt_name);
             this.groupBox1.Location = new System.Drawing.Point(27, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(399, 158);
+            this.groupBox1.Size = new System.Drawing.Size(399, 172);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Income/Exp Details";
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(124, 120);
+            this.btn_reset.Location = new System.Drawing.Point(124, 134);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(75, 23);
             this.btn_reset.TabIndex = 4;
@@ -120,7 +124,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(222, 120);
+            this.btn_save.Location = new System.Drawing.Point(222, 134);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 5;
@@ -146,6 +150,25 @@
             this.dataGridView1.Size = new System.Drawing.Size(399, 260);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Is Property";
+            // 
+            // chk_property
+            // 
+            this.chk_property.AutoSize = true;
+            this.chk_property.Location = new System.Drawing.Point(85, 103);
+            this.chk_property.Name = "chk_property";
+            this.chk_property.Size = new System.Drawing.Size(15, 14);
+            this.chk_property.TabIndex = 15;
+            this.chk_property.UseVisualStyleBackColor = true;
             // 
             // ExpenseMaster
             // 
@@ -179,5 +202,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_gl_code;
         private System.Windows.Forms.Button btn_reset;
+        private System.Windows.Forms.CheckBox chk_property;
+        private System.Windows.Forms.Label label3;
     }
 }

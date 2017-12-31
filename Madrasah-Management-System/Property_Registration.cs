@@ -19,7 +19,7 @@ namespace Madrasah_Management_System
 
         private void Property_Registration_Load(object sender, EventArgs e)
         {
-            var ds = common.getDataSet("SELECT * FROM INC_EXP_HEADS WHERE TYPE = 'Income'");
+            var ds = common.getDataSet("SELECT * FROM INC_EXP_HEADS WHERE TYPE = 'Income' AND SUB_TYPE = 2");
             cmb_inc_head.DataSource = ds.Tables[0];
             cmb_inc_head.SelectedIndex = 0;
             loadGridData();

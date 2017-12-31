@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dp_to = new System.Windows.Forms.DateTimePicker();
+            this.dp_from = new System.Windows.Forms.DateTimePicker();
             this.btn_show = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,8 +42,8 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btn_show);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dp_from);
+            this.groupBox1.Controls.Add(this.dp_to);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(278, 160);
@@ -51,19 +51,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report Filters";
             // 
-            // dateTimePicker1
+            // dp_to
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(91, 64);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dp_to.Location = new System.Drawing.Point(91, 64);
+            this.dp_to.Name = "dp_to";
+            this.dp_to.Size = new System.Drawing.Size(138, 20);
+            this.dp_to.TabIndex = 2;
             // 
-            // dateTimePicker2
+            // dp_from
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(91, 28);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(138, 20);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dp_from.Location = new System.Drawing.Point(91, 28);
+            this.dp_from.Name = "dp_from";
+            this.dp_from.Size = new System.Drawing.Size(138, 20);
+            this.dp_from.TabIndex = 1;
             // 
             // btn_show
             // 
@@ -115,8 +115,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_show;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dp_from;
+        private System.Windows.Forms.DateTimePicker dp_to;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

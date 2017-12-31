@@ -28,7 +28,7 @@ namespace Madrasah_Management_System
         private void loadData()
         {
 
-            DataSet ds = common.getDataSet("SELECT ID,Name,TYPE Type,GL_CODE 'GL Code' FROM INC_EXP_HEADS");
+            DataSet ds = common.getDataSet("SELECT ID,Name,TYPE Type,GL_CODE 'GL Code',CASE SUB_TYPE WHEN 2 THEN 'Yes' ELSE 'No' END 'Is Property' FROM INC_EXP_HEADS");
             dataGridView1.DataSource = ds.Tables[0];
             dataGridView1.Columns["ID"].Visible = false;
             dataGridView1.Columns["NAME"].Width = 150;
@@ -45,6 +45,8 @@ namespace Madrasah_Management_System
             cmb_type.SelectedIndex = dr["type"].ToString() == "Income" ? 0 : 1;
             txt_name.Enabled = false;
             cmb_type.Enabled = false;
+            chk_property.Enabled = false;
+            chk_property.Checked = dr["Is Property"].ToString() == "Yes" ? true : false;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -69,11 +71,12 @@ namespace Madrasah_Management_System
                 MessageBox.Show("Name already Exists, Select a different name");
                 return;
             }
+            int sub_type = chk_property.Checked ? 2 : 0;
             string dmlCmd = "";
             if (isEdit == false)
             {
-                dmlCmd = string.Format(@"INSERT INTO INC_EXP_HEADS(NAME,TYPE,GL_CODE) 
-            VALUES('{0}','{1}','{2}')", name, type, glcode);
+                dmlCmd = string.Format(@"INSERT INTO INC_EXP_HEADS(NAME,TYPE,GL_CODE,SUB_TYPE) 
+            VALUES('{0}','{1}','{2}',{3})", name, type, glcode,sub_type);
             }
             else
             {
@@ -100,6 +103,8 @@ namespace Madrasah_Management_System
             txt_name.Enabled = true;
             cmb_type.Enabled = true;
             cmb_type.SelectedIndex = 0;
+            chk_property.Enabled = true;
+            chk_property.Checked = false;
         }
 
         

@@ -46,9 +46,8 @@ namespace Madrasah_Management_System
         private void fillIncExpHeads()
         {
             string type = cmb_type.Text;
-            var ds = common.getDataSet("SELECT * FROM INC_EXP_HEADS WHERE TYPE = '" + type + "'");
-            cmb_heads.DataSource = ds.Tables[0];
-            cmb_heads.SelectedIndex = 0;
+            string selCmd = "SELECT * FROM INC_EXP_HEADS WHERE TYPE = '" + type + "' AND ISNULL(SUB_TYPE,0) = 0";
+            
             if (type == "Expense")
             {
                 lbl_rcvd_from.Text = "Paid To";
@@ -59,7 +58,9 @@ namespace Madrasah_Management_System
                 lbl_rcvd_from.Text = "Recvd. From";
                 lbl_rcvd_dt.Text = "Recvd. On";
             }
-
+            var dt = common.getDataSet(selCmd).Tables[0];
+            cmb_heads.DataSource = dt;
+            cmb_heads.SelectedIndex = 0;
         }
         private void cmb_type_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -103,17 +104,24 @@ namespace Madrasah_Management_System
             }
 
             string incExpHd = cmb_heads.SelectedValue.ToString();
+            string incExpHdName = cmb_heads.Text;
             string description = txt_desc.Text.Trim();
             string rcvdDate = dp_rcvd_dt.Value.ToString("yyyy-MMMM-dd");
             string amount = txt_amount.Text;
             string pay_method = cmb_pay_method.Text;
             string studentID = "0";
+            string comments = txt_comments.Text.Trim();
             if (studentDtls != null)
             {
                 studentID = studentDtls["id"].ToString();
             }
-            string insrtCmd = string.Format(@"INSERT INTO INC_EXP_TRANS(DESCRIPTION,INC_EXP_HEAD,AMOUNT,TRANS_DATE,STUDENT,PAY_METHOD)
-            VALUES('{0}',{1},{2},'{3}',{4},'{5}')", description, incExpHd, amount, rcvdDate, studentID, pay_method);
+            if (comments == string.Empty)
+            {
+                string type = cmb_type.Text == "Income" ? "Received" : "Paid";
+                comments = string.Format("{0} amount {1} against income head {2}",type, amount, incExpHdName);
+            }
+            string insrtCmd = string.Format(@"INSERT INTO INC_EXP_TRANS(DESCRIPTION,INC_EXP_HEAD,AMOUNT,TRANS_DATE,STUDENT,PAY_METHOD,COMMENTS)
+            VALUES('{0}',{1},{2},'{3}',{4},'{5}','{6}')", description, incExpHd, amount, rcvdDate, studentID, pay_method,comments);
             string id_value;
             string retVal = common.updateTable(insrtCmd, out id_value);
 
