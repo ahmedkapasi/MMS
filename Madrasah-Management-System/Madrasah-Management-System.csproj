@@ -83,6 +83,12 @@
     <Compile Include="Income_Exp_Trans.Designer.cs">
       <DependentUpon>Income_Exp_Trans.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inc_Exp_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inc_Exp_Status.Designer.cs">
+      <DependentUpon>Inc_Exp_Status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lease_Property.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     <EmbeddedResource Include="Fees_Status.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inc_Exp_Status.resx">
+      <DependentUpon>Inc_Exp_Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Print_Receipts.resx">
       <DependentUpon>Print_Receipts.cs</DependentUpon>

@@ -36,6 +36,7 @@
             this.rentReceiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feesStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rePrintReceiptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,7 @@
             this.tenantRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propertyRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rePrintReceiptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.incExpStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +104,8 @@
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.feesStatusToolStripMenuItem,
-            this.rePrintReceiptsToolStripMenuItem});
+            this.rePrintReceiptsToolStripMenuItem,
+            this.incExpStatusToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -111,9 +113,16 @@
             // feesStatusToolStripMenuItem
             // 
             this.feesStatusToolStripMenuItem.Name = "feesStatusToolStripMenuItem";
-            this.feesStatusToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.feesStatusToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.feesStatusToolStripMenuItem.Text = "Fees Status";
             this.feesStatusToolStripMenuItem.Click += new System.EventHandler(this.feesStatusToolStripMenuItem_Click);
+            // 
+            // rePrintReceiptsToolStripMenuItem
+            // 
+            this.rePrintReceiptsToolStripMenuItem.Name = "rePrintReceiptsToolStripMenuItem";
+            this.rePrintReceiptsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.rePrintReceiptsToolStripMenuItem.Text = "Re-Print Receipts";
+            this.rePrintReceiptsToolStripMenuItem.Click += new System.EventHandler(this.rePrintReceiptsToolStripMenuItem_Click);
             // 
             // searchToolStripMenuItem
             // 
@@ -169,12 +178,12 @@
             this.studentRegistrationToolStripMenuItem.Text = "Student Registration";
             this.studentRegistrationToolStripMenuItem.Click += new System.EventHandler(this.studentRegistrationToolStripMenuItem_Click_1);
             // 
-            // rePrintReceiptsToolStripMenuItem
+            // incExpStatusToolStripMenuItem
             // 
-            this.rePrintReceiptsToolStripMenuItem.Name = "rePrintReceiptsToolStripMenuItem";
-            this.rePrintReceiptsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.rePrintReceiptsToolStripMenuItem.Text = "Re-Print Receipts";
-            this.rePrintReceiptsToolStripMenuItem.Click += new System.EventHandler(this.rePrintReceiptsToolStripMenuItem_Click);
+            this.incExpStatusToolStripMenuItem.Name = "incExpStatusToolStripMenuItem";
+            this.incExpStatusToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.incExpStatusToolStripMenuItem.Text = "Inc Exp Status";
+            this.incExpStatusToolStripMenuItem.Click += new System.EventHandler(this.incExpStatusToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -213,6 +222,7 @@
         private System.Windows.Forms.ToolStripMenuItem rentReceiptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem feesStatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rePrintReceiptsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem incExpStatusToolStripMenuItem;
     }
 }
 

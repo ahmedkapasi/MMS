@@ -106,5 +106,10 @@ namespace Madrasah_Management_System
         {
             common.showForm(new Print_Receipts());
         }
+
+        private void incExpStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            common.showForm(new Inc_Exp_Status());
+        }
     }
 }

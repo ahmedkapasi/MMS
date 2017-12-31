@@ -61,5 +61,10 @@ namespace Madrasah_Management_System
 
             this.reportViewer1.RefreshReport();
         }
+
+        private void reportViewer1_RenderingComplete(object sender, RenderingCompleteEventArgs e)
+        {
+
+        }
     }
 }
