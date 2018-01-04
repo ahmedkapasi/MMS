@@ -113,6 +113,7 @@ namespace Madrasah_Management_System
                 {
                     if (form.GetType() != typeof(Report_Viewer))
                     {
+                        f.BringToFront();
                         f.Show();
                         return;
                     }
@@ -120,6 +121,7 @@ namespace Madrasah_Management_System
                 }
             }
             form.MdiParent = MainForm.ActiveForm;
+            form.BringToFront();
             form.Show();
         }
 

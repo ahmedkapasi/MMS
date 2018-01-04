@@ -111,5 +111,15 @@ namespace Madrasah_Management_System
         {
             common.showForm(new Inc_Exp_Status());
         }
+
+        private void btn_srch_student_Click(object sender, EventArgs e)
+        {
+            common.showForm(new StudentSearch());
+        }
+
+        private void btn_rent_receipt_Click(object sender, EventArgs e)
+        {
+            common.showForm(new RentCollection());
+        }
     }
 }
