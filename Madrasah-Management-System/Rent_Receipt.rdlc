@@ -210,14 +210,16 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>rcpt_no</rd:DefaultName>
             <Top>2.99227cm</Top>
-            <Left>6.7437cm</Left>
+            <Left>6.00287cm</Left>
             <Height>0.6cm</Height>
-            <Width>3.16675cm</Width>
+            <Width>3.90758cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>

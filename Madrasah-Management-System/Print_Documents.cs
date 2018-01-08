@@ -31,20 +31,20 @@ namespace Madrasah_Management_System
             string type = dr["type"].ToString();
             string inc_exp_name = dr["name"].ToString();
             string trans_details = "";
-            string rcpt_no = "";
+            string rcpt_no = id_value.PadLeft(6, '0');
             if (type == "Income")
             {
                 period = "Received On " + period;
                 desc = "Received From " + desc;
                 trans_details = "Received ";
-                rcpt_no = "Receipt No.: " + id_value.PadLeft(5, '0');
+                rcpt_no = "Receipt No. : " + rcpt_no;
             }
             else
             {
                 period = "Paid On " + period;
                 desc = "Paid To " + desc;
                 trans_details = "Paid ";
-                rcpt_no = "Voucher No.: " + id_value.PadLeft(5, '0');
+                rcpt_no = "Voucher No. : " + rcpt_no;
 
             }
 
@@ -89,7 +89,7 @@ namespace Madrasah_Management_System
             string trans_details = "";
             string todays_date = "Received On: " + dr["Recvd On"].ToString();
             string amount = dr["Amount"].ToString();
-            string rcpt_no = "Receipt No.: " + id_value.PadLeft(5, '0');
+            string rcpt_no = "Receipt No. : " + id_value.PadLeft(6, '0');
 
 
             Dictionary<string, object> frmParams = new Dictionary<string, object>();
@@ -133,7 +133,7 @@ namespace Madrasah_Management_System
             string pay_method = dr["payment_method"].ToString();
             string recvd_on = dr["recvd_on"].ToString();
             string fees_details = string.Format("Received an amount of {0} on {1} by {2}", fees_amount, recvd_on, pay_method);
-            string rcpt_no = "Receipt No.: " + id_value.PadLeft(5, '0');
+            string rcpt_no = "Receipt No. : " + id_value.PadLeft(6, '0');
             rptParams.Add("Period", period);
             rptParams.Add("MHR_No", mhr_no);
             rptParams.Add("Name", name);

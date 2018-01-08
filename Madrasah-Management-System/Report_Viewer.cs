@@ -19,8 +19,9 @@ namespace Madrasah_Management_System
             InitializeComponent();
             LocalReport localReport = reportViewer1.LocalReport;
 
-            string reportName = reportDtls["reportName"].ToString();
-            if (reportName == "fees_status.rdlc") {
+            string reportName = reportDtls["reportName"].ToString().ToLower();
+            if (reportName == "fees_status.rdlc" || reportName == "inc_exp_status.rdlc")
+            {
                 reportViewer1.Width = 1200;
                 this.Width = 1200;
             }

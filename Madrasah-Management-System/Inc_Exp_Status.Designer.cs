@@ -34,21 +34,18 @@
             this.btn_show = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btn_show);
             this.groupBox1.Controls.Add(this.dp_from);
             this.groupBox1.Controls.Add(this.dp_to);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(278, 160);
+            this.groupBox1.Size = new System.Drawing.Size(278, 108);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report Filters";
@@ -69,7 +66,7 @@
             // 
             // btn_show
             // 
-            this.btn_show.Location = new System.Drawing.Point(91, 112);
+            this.btn_show.Location = new System.Drawing.Point(89, 136);
             this.btn_show.Name = "btn_show";
             this.btn_show.Size = new System.Drawing.Size(127, 23);
             this.btn_show.TabIndex = 3;
@@ -97,28 +94,19 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "To :";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 192);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(472, 238);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // Inc_Exp_Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 476);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(306, 176);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_show);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Inc_Exp_Status";
-            this.Text = "Inc_Exp_Status";
+            this.Text = "Income Expense Status";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,6 +119,5 @@
         private System.Windows.Forms.DateTimePicker dp_to;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

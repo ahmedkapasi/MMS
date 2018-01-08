@@ -213,7 +213,7 @@
                   <TextRun>
                     <Value>=Parameters!Name.Value</Value>
                     <Style>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -403,7 +403,7 @@
                   <TextRun>
                     <Value>=Parameters!Rcpt_No.Value</Value>
                     <Style>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
