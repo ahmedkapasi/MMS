@@ -35,7 +35,7 @@ namespace Madrasah_Management_System
             select rd.id,Name,rd.Amount,rd.pay_method 'Pay Method',rd.Comments,ie.Type,rd.date_created  'Date'
             from rent_details rd,inc_exp_heads ie
             where  rd.inc_exp_head = ie.id) a
-            where date between '{0}' and '{1}'
+            where format(date,'dd-MMM-yyyy') between '{0}' and '{1}'
             order by a.type desc", from_date, to_date);
 
             var ds = common.getDataSet(selCmd);
