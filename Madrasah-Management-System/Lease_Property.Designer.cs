@@ -179,7 +179,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "stu_name";
+            this.label1.Text = "Property";
             // 
             // dg_lease_dtls
             // 
@@ -195,13 +195,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 436);
+            this.ClientSize = new System.Drawing.Size(532, 436);
             this.Controls.Add(this.dg_lease_dtls);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Lease_Property";
-            this.Text = "Lease stu_name";
+            this.Text = "Lease Property";
             this.Load += new System.EventHandler(this.Lease_Property_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

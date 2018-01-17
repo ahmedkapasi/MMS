@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Madrasah_Management_System
 {
-    public partial class RentCollection : Form
+    public partial class RentCollection : base_form
     {
         DataSet ds_prop_dtls;
         public RentCollection()

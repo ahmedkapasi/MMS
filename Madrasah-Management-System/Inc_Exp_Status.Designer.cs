@@ -105,6 +105,7 @@
             this.MinimizeBox = false;
             this.Name = "Inc_Exp_Status";
             this.Text = "Income Expense Status";
+            this.Load += new System.EventHandler(this.Inc_Exp_Status_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 namespace Madrasah_Management_System
 {
-    public partial class StudentSearch : Form
+    public partial class StudentSearch : base_form
     {
         DataSet student_ds = new DataSet("students");
         private int _selectedRowIndx;

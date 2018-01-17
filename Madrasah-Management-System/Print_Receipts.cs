@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Madrasah_Management_System
 {
-    public partial class Print_Receipts : Form
+    public partial class Print_Receipts : base_form
     {
         public Print_Receipts()
         {

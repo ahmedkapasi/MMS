@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Madrasah_Management_System
 {
-    public partial class login : Form
+    public partial class login : base_form
     {
         public login()
         {

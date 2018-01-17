@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Madrasah_Management_System
 {
-    public partial class Property_Registration : Form
+    public partial class Property_Registration : base_form
     {
         public Property_Registration()
         {

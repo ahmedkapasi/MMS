@@ -12,7 +12,7 @@ using Microsoft.VisualBasic;
 using System.Globalization;
 namespace Madrasah_Management_System
 {
-    public partial class FeeCollection : Form
+    public partial class FeeCollection : base_form
     {
         public FeeCollection()
         {

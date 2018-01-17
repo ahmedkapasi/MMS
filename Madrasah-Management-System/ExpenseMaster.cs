@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Madrasah_Management_System
 {
-    public partial class ExpenseMaster : Form
+    public partial class ExpenseMaster : base_form
     {
         bool isEdit = false;
         DataRow dataRowEdited;

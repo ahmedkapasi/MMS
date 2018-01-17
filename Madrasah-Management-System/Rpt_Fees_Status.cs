@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Madrasah_Management_System
 {
-    public partial class Rpt_Fees_Status : Form
+    public partial class Rpt_Fees_Status : base_form
     {
         public Rpt_Fees_Status()
         {

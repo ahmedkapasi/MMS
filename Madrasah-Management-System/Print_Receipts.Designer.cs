@@ -70,7 +70,7 @@
             // 
             // btn_print
             // 
-            this.btn_print.Location = new System.Drawing.Point(135, 99);
+            this.btn_print.Location = new System.Drawing.Point(135, 98);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(75, 23);
             this.btn_print.TabIndex = 3;

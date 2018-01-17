@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Madrasah_Management_System
 {
-    public partial class Inc_Exp_Status : Form
+    public partial class Inc_Exp_Status : base_form
     {
         public Inc_Exp_Status()
         {
@@ -58,6 +58,11 @@ namespace Madrasah_Management_System
             frmParams.Add("reportName", "inc_exp_status.rdlc");
             Form objForm = new Report_Viewer(frmParams);
             common.showForm(objForm);
+
+        }
+
+        private void Inc_Exp_Status_Load(object sender, EventArgs e)
+        {
 
         }
     }

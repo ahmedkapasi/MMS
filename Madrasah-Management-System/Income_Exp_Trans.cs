@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Madrasah_Management_System
 {
-    public partial class Income_Exp_Trans : Form
+    public partial class Income_Exp_Trans : base_form
     {
         public Income_Exp_Trans()
         {
